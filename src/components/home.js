@@ -1,4 +1,7 @@
-import Hmenu from "./hmenu";
+import Footer from "./footer";
+import Hgallery from "./home/hgallery";
+import Hmenu from "./home/hmenu";
+import Hreservation from "./home/hreservation";
 import NavItems from "./navitems";
 
 function Home (){
@@ -12,6 +15,9 @@ function Home (){
                 <p>The best flavour of the country</p>
             </div>
             <Hmenu></Hmenu>
+            <Hreservation/>
+            <Hgallery/>
+            <Footer/>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 function Meals (){
     return (
-        prompt(Hey)
+        <div>Hey</div>
     )
 
 }
