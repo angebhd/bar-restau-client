@@ -1,4 +1,4 @@
-import Drinks from "../items/drink";
+import DrinkList from "../items/drink";
 import Meals from "../items/meals";
 
 function Hmenu (){
@@ -12,7 +12,7 @@ function Hmenu (){
             </section>
             <section>
                 <h3>Drinks</h3>
-                <Drinks/>
+                <DrinkList/>
                 <p>Others...</p>
             </section>
         </div>
