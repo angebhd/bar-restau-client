@@ -1,13 +1,13 @@
 import DrinkList from "../items/drink";
-import Meals from "../items/meals";
+import MealList from "../items/meals";
 
 function Hmenu (){
     return(
         <div className="menu">
             <h1>Menu</h1>
             <section>
-                <h3>Meals</h3>
-                <Meals/>
+                <h2>Meals</h2>
+                <MealList/>
                 <p>Others...</p>
             </section>
             <section>
