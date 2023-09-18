@@ -9,6 +9,11 @@ function DrinkList (){
                 name:"Korean Food",
                 image:'https://c4.wallpaperflare.com/wallpaper/1017/647/742/food-pizza-still-life-hd-wallpaper-preview.jpg',
             },
+            {
+                id:1,
+                name:"Korean Food",
+                image:'https://c4.wallpaperflare.com/wallpaper/1017/647/742/food-pizza-still-life-hd-wallpaper-preview.jpg',
+            },
         ]
 
     return (
