@@ -1,6 +1,6 @@
 function Hgallery (){
     return (
-        <div>
+        <div id='gallery'>
             <h2>Gallery ...</h2>
             <div>
                 <img src="https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg" alt="Restaurant"></img>
