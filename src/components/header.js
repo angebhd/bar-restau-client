@@ -2,10 +2,10 @@ import NavItems from "./navitems";
 
 function Header() {
     return(
-        <div>
+        <header>
                 <h1>Bar-restau</h1>
                 <NavItems/>
-        </div>
+        </header>
     )
 }
 export default Header
