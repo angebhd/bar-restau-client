@@ -1,12 +1,10 @@
-import DrinkList from "./items/drink"
-import Header from "./header"
-import MealList from "./items/meals"
-import Footer from "./footer"
+import DrinkList from "../components/items/drink"
+import MealList from "../components/items/meals"
+import Footer from "../components/footer"
 
 function Menu(){
     return(
         <>
-            <Header/>
             <h1>Menu</h1>
             <div>
                 <h2>Drinks</h2>

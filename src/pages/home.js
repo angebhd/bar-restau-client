@@ -1,13 +1,11 @@
-import Footer from "./footer";
-import Hgallery from "./home/hgallery";
-import Hmenu from "./home/hmenu";
-import Hreservation from "./home/hreservation";
-import Header from "./header";
+import Footer from "../components/footer";
+import Hgallery from "../components/home/hgallery";
+import Hmenu from "../components/home/hmenu";
+import Hreservation from "../components/home/hreservation";
 
 function Home (){
     return(
         <div>
-            <Header/>
             <div>
                 <p>The best flavour of the country</p>
             </div>

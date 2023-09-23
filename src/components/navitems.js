@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 function NavItems (){
     return(
         <nav>
-            <p><a href="#home">Home</a></p>
-            <p><a href="#menu">Menu</a></p>
-            <p><a href="#reservation">Reservation</a></p>
-            <p><a href="#gallery">Gallery</a></p>
-            <p><a href="#contact">Contact</a></p>
-            <p><a href="#about">about</a></p>
+            <Link to="/Home">Home</Link>
+            <Link to="/menu">Menu</Link>
+            <Link to="/reservation">Reservation</Link>
+            <Link to="/gallery">Gallery</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="#about">About</Link>
         </nav>
 
     )
