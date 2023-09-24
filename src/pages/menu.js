@@ -5,14 +5,14 @@ import Footer from "../components/footer"
 function Menu(){
     return(
         <>
-            <h1>Menu</h1>
+            <h2>Menu</h2>
             <div>
-                <h2>Drinks</h2>
+                <h3>Drinks</h3>
                 <div>
                     <div>SearchBar</div>
                     <DrinkList/>
                 </div>
-                <h2>Meals</h2>
+                <h3>Meals</h3>
                 <div>
                     <div>SearchBar</div>
                     <MealList/>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function NavItems (){
     return(
         <nav>
-            <Link to="/Home">Home</Link>
+            <Link to="/">Home</Link>
             <Link to="/menu">Menu</Link>
             <Link to="/reservation">Reservation</Link>
             <Link to="/gallery">Gallery</Link>
