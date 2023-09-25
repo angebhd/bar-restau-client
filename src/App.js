@@ -4,20 +4,26 @@ import Menu from './pages/menu'
 import Header from './components/header'
 import Gallery from './pages/gallery';
 import Reservation from './pages/reservation';
+import Footer from './components/footer';
+import Contact from './pages/contact';
+import About from './pages/about';
 
 function App() {
   return (
       <div>
         <Header/>
+
         <Routes>
-          <Route path="/" exact element={<Home/>} />
           <Route path="/" exact element={<Home/>} />
 
           <Route path="/menu" element={<Menu/>} />
           <Route path="/reservation" element={<Reservation/>} />
           <Route path="/gallery" element={<Gallery/>} />
-
+          <Route path="/contact" exact element={<Contact/>} />
+          <Route path="/about" exact element={<About/>} />
         </Routes>
+
+        <Footer/>
       </div>
   );
 }

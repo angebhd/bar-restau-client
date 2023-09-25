@@ -1,6 +1,5 @@
 import DrinkList from "../components/items/drink"
 import MealList from "../components/items/meals"
-import Footer from "../components/footer"
 
 function Menu(){
     return(
@@ -18,7 +17,7 @@ function Menu(){
                     <MealList/>
                 </div>
             </div>
-            <Footer/>
+            
         
         </>
     )

@@ -1,4 +1,3 @@
-import Footer from "../components/footer";
 import Hgallery from "../components/home/hgallery";
 import Hmenu from "../components/home/hmenu";
 import Hreservation from "../components/home/hreservation";
@@ -12,7 +11,6 @@ function Home (){
             <Hmenu></Hmenu>
             <Hreservation/>
             <Hgallery/>
-            <Footer/>
         </div>
     )
 }
