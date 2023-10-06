@@ -1,6 +1,7 @@
 import Hgallery from "../components/home/hgallery";
 import Hmenu from "../components/home/hmenu";
 import Hreservation from "../components/home/hreservation";
+import "../styles/home.css"
 
 function Home (){
     return(

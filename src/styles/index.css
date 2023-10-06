@@ -1,0 +1,17 @@
+img{
+    max-width: 100%;
+    width: 400px;
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+}
+nav p a{
+    padding: 1rem;
+}

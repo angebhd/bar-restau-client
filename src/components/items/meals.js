@@ -26,12 +26,12 @@ function MealList (){
             },
         ]
     return (
-        <div>
+        <div className="items-container">
             {meals.map((meal)=>(
-                <>
+                <div className="items">
                 <h5>{meal.name}</h5>
                 <img src={meal.image} alt={meal.name}></img>
-                </>
+                </div>
             ))}
         </div>
     )

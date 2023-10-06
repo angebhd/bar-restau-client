@@ -32,12 +32,12 @@ function DrinkList (){
         ]
 
     return (
-        <div>
+        <div className="items-container">
             {drinks.map((drink)=>(
-                <>
+                <div className="items">
                 <h5>{drink.name}</h5>
                 <img src={drink.image} alt={drink.name}></img>
-                </>
+                </div>
             ))}
         </div>
     )

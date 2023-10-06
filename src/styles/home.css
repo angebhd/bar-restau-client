@@ -1,0 +1,13 @@
+/* DrinkList & MealList */
+div.items-container{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+div.items{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
