@@ -24,3 +24,12 @@ nav p a{
     padding: 1rem;
     color: #fff;
 }
+
+/* Footer */
+footer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #111;
+    color:#fff;
+}
