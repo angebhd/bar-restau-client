@@ -29,7 +29,8 @@ nav p a{
 footer{
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
     background-color: #111;
     color:#fff;
 }
