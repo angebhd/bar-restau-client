@@ -8,7 +8,10 @@ function Menu(){
             <div>
                 <h3>Drinks</h3>
                 <div>
-                    <div>SearchBar</div>
+                    <div>
+                        {/* <label for="search-menu"></label> */}
+                        <input name='search-menu' type="search" placeholder="search..."></input>
+                    </div>
                     <DrinkList/>
                 </div>
                 <h3>Meals</h3>

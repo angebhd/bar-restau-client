@@ -15,10 +15,13 @@ div.items{
 }
 
 p.best-flavour{
+    padding-left: 1rem;
     font-size:xx-large;
     color: #d79a10;
 }
 
-#hmenu, #reservation, #hgallery{
-    padding: 0 0.2rem;
+#hmenu, 
+#hreservation, 
+#hgallery{
+    padding: 0 0.3rem;
 }
