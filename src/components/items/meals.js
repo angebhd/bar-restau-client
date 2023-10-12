@@ -24,6 +24,11 @@ function MealList (){
                 name:"Sushi",
                 image:'https://images6.alphacoders.com/910/910443.jpg',
             },
+            {
+                id:6,
+                name:"Pizza",
+                image:'https://c4.wallpaperflare.com/wallpaper/1017/647/742/food-pizza-still-life-hd-wallpaper-preview.jpg',
+            },
         ]
     return (
         <div className="items-container">

@@ -3,7 +3,7 @@ import MealList from "../items/meals";
 
 function Hmenu (){
     return(
-        <div className="menu" id="menu">
+        <div className="hmenu" id="menu">
             <h1>Menu</h1>
             <section>
                 <h2>Meals</h2>

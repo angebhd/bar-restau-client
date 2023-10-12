@@ -5,23 +5,25 @@ img{
 body{
     margin: 0;
 }
+
 /* Header */
 header{
+    padding: 0 0.3rem;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #111;
     color:#fff;
-    margin-bottom: 0.5rem solid red ;
 }
 nav{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 600px;
     align-items: center;
 }
 nav p a{
-    padding: 1rem;
+    padding: 0.2rem;
     color: #fff;
 }
 

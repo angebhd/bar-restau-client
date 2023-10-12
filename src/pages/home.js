@@ -7,7 +7,7 @@ function Home (){
     return(
         <div>
             <div>
-                <p>The best flavour of the country</p>
+                <p className="best-flavour">The best flavour of the country</p>
             </div>
             <Hmenu></Hmenu>
             <Hreservation/>

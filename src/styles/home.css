@@ -4,10 +4,21 @@ div.items-container{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
+
+    padding: 0 0.3rem;
 }
 
 div.items{
     display: flex;
     flex-direction: column;
-    width: 33%;
+    align-items:center;
+}
+
+p.best-flavour{
+    font-size:xx-large;
+    color: #d79a10;
+}
+
+#hmenu, #reservation, #hgallery{
+    padding: 0 0.2rem;
 }
