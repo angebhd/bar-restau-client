@@ -1,17 +1,58 @@
-/* DrinkList & MealList */
-div.items-container{
-    max-width: 100%;
+/* Gallery */
+div#hgallery div.hg-image{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
 
-    padding: 0 0.3rem;
+
+
+
+}
+div#hgallery img{
+    width: 49%;
+    margin: 4vh auto;
+    border-radius: 1%;
+
+}
+
+
+
+/* DrinkList & MealList */
+div.items-container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    /* background-color: #ebd49e; */
+    background-color: #fff0cc;
+
+    border-radius: 5vh 0;
+    padding: 3vh;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 div.items{
     display: flex;
     flex-direction: column;
     align-items:center;
+    background-color: #ebd49e;
+    margin: 2vh;
+    border-radius: 2.5vh;
+    width: 30%;
+}
+div.items h5{
+    font-size: large;
+    margin: 0 1vh;
+    padding: 1vh;
+    height: 30px;
+}
+div.items img{
+    width:fit-content;
+    height: 250px;
+    border-radius: 0 0 2.5vh 2.5vh;
+
 }
 
 p.best-flavour{

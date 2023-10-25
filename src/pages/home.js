@@ -9,9 +9,9 @@ function Home (){
             <div>
                 <p className="best-flavour">The best flavour of the country</p>
             </div>
+            <Hgallery/>
             <Hmenu></Hmenu>
             <Hreservation/>
-            <Hgallery/>
         </div>
     )
 }
