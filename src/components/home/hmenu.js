@@ -6,12 +6,12 @@ function Hmenu (){
         <div className="menu" id="hmenu">
             <h1>Menu</h1>
             <section>
-                <h2>Meals</h2>
+                <h2 className="hmenu">Meals</h2>
                 <MealList/>
                 <p>Others...</p>
             </section>
             <section>
-                <h3>Drinks</h3>
+                <h2 className="hmenu">Drinks</h2>
                 <DrinkList/>
                 <p>Others...</p>
             </section>

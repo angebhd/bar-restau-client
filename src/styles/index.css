@@ -1,3 +1,6 @@
+*{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
 img{
     max-width: 100%;
     width: 400px;
@@ -37,4 +40,5 @@ footer{
     align-items: center;
     background-color: #111;
     color:#fff;
+    
 }

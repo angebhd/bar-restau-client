@@ -6,7 +6,7 @@ import "../styles/home.css"
 function Home (){
     return(
         <div>
-            <div>
+            <div className="best-flavor-container">
                 <p className="best-flavour">The best flavour of the country</p>
             </div>
             <Hgallery/>
