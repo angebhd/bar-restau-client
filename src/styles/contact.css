@@ -1,0 +1,12 @@
+ .about .fas, .about .fab{
+    color: black;
+}
+
+.about{
+    margin-left: 4vh;
+    margin-right: 4vh;
+}
+
+p.about{
+    text-align: justify;
+}

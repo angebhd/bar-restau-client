@@ -7,7 +7,6 @@ function NavItems (){
             <p><Link to="/menu">Menu</Link></p>
             <p><Link to="/reservation">Reservation</Link></p>
             <p><Link to="/gallery">Gallery</Link></p>
-            <p><Link to="/contact">Contact</Link></p>
             <p><Link to="/about">About</Link></p>
         </nav>
 

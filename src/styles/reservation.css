@@ -1,0 +1,32 @@
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+    margin: 2vh auto;
+    padding: 20px;
+    background-color: #fff0cc;
+    border-radius: 4vh;
+    border: 3px white solid;
+}
+select, input{
+    margin-bottom: 5vh;
+    margin-top: 1vh;
+}
+label{
+    border-top: 2px #ebd49e solid;
+}
+button{
+    background-color: #ebd49e;
+    border: none;
+    padding: 5px;
+    max-width: 100px;
+    margin: 0 auto;
+    border-radius: 2vh;
+    border: 2px white solid;
+
+}
+button p{
+    margin:2px;
+    padding: 3px;
+    font-size: large;
+}

@@ -42,3 +42,16 @@ footer{
     color:#fff;
     
 }
+.socialNetwork{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.socialNetwork p{
+    margin: 4px;
+    padding: 0 2vh;
+}
+.fab, .fas{
+    font-size: xx-large;
+    color: #ebd49e;
+}

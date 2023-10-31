@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/reservation.css"
 function Reservation() {
     
         const [formData, setFormData] = useState({
@@ -45,7 +46,7 @@ function Reservation() {
             <h2>Reservation</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="table">Choose the type of table : </label>
-                <select name="table" value={formData.table} onChange={handleChange}>
+                <select name="table" value={formData.table} onChange={handleChange} required>
                     <option value={1}>Table for one</option>
                     <option value={2}>Table for two</option>
                     <option value={4}>Table for four</option>
@@ -53,12 +54,12 @@ function Reservation() {
                 </select>
     
                 <br></br>
-                <label htmlFor="time">Time : </label>
-                <input name='time' type="time" value={formData.time} onChange={handleChange}></input>
+                <label htmlFor="time">Date and time : </label>
+                <input name='time' type="datetime-local" value={formData.time} onChange={handleChange} required></input>
                 <br></br>
                 <label htmlFor="name">Name : </label>
-                <input placeholder="Ange BHD" name="name" value={formData.name} onChange={handleChange}></input>
-                <button type="submit">Submit</button>
+                <input placeholder="Your name" name="name" value={formData.name} onChange={handleChange} required></input>
+                <button type="submit"><p>Reserve</p></button>
             </form>
         </>
 

@@ -1,11 +1,11 @@
 function SocialNetwork(){
     return(
-        <div>
-            <a href="/">Call </a>
-            <a href="/">Instagram </a>
-            <a href="/">Facebook </a>
-            <a href="/">Twitter </a>
-            <a href="/">WhatsApp </a>
+        <div className="socialNetwork">
+            <p><a href="/"><i className='fas fa-phone-alt'></i></a></p>
+            <p><a href="/"><i className='fab fa-instagram'></i></a></p>
+            <p><a href="/"><i className='fab fa-facebook-f'></i></a></p>
+            <p><a href="/"><i className='fab fa-twitter'></i></a></p>
+            <p><a href="/"><i className='fab fa-whatsapp'></i></a></p>
         </div>
     )
 
