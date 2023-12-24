@@ -22,3 +22,7 @@
     Some features of the website :
 - The user can buy (command) foods, drinks, ...
 - The user can book a table
+
+
+______________________________________________________________________________________________
+## Am gonna stop here, nex year am gonna add code to read data from the date base (meal, drink, ...), and add also add a admin page to see reservation, and do crud operations on the database.
