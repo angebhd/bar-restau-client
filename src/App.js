@@ -5,7 +5,6 @@ import Header from './components/header'
 import Gallery from './pages/gallery';
 import Reservation from './pages/reservation';
 import Footer from './components/footer';
-import Contact from './pages/contact';
 import About from './pages/about';
 
 function App() {
