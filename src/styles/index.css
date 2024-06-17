@@ -1,14 +1,10 @@
 *{
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-img{
-    max-width: 100%;
-    width: 400px;
-}
+
 body{
     margin: 0;
     background-color: #fef5de;
-
 }
 
 /* Header */
@@ -33,25 +29,48 @@ nav p a{
 }
 
 /* Footer */
-footer{
-    display:flex;
+footer {
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     background-color: #111;
-    color:#fff;
-    
+    color: #fff;
+    padding: 20px;
 }
-.socialNetwork{
+
+/* Style for social network links */
+.socialNetwork {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
+    margin-bottom: 10px;
 }
-.socialNetwork p{
+
+.socialNetwork p {
     margin: 4px;
-    padding: 0 2vh;
+    padding: 0 10px;
 }
-.fab, .fas{
-    font-size: xx-large;
+
+.fab,
+.fas {
+    font-size: 24px;
     color: #ebd49e;
+    margin-right: 10px;
+}
+
+/* Media Query for responsiveness */
+@media only screen and (max-width: 768px) {
+    footer {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .socialNetwork {
+        flex-wrap: wrap; /* Allow social icons to wrap on smaller screens */
+        justify-content: center; /* Center social icons horizontally */
+    }
+
+    .socialNetwork p {
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
 }

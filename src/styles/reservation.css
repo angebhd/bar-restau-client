@@ -1,4 +1,4 @@
-form{
+form.reservation{
     display: flex;
     flex-direction: column;
     max-width: 560px;
@@ -8,14 +8,14 @@ form{
     border-radius: 4vh;
     border: 3px white solid;
 }
-select, input{
+form.reservation select, form.reservation input{
     margin-bottom: 5vh;
     margin-top: 1vh;
 }
-label{
+form.reservation label{
     border-top: 2px #ebd49e solid;
 }
-button{
+form.reservation button{
     background-color: #ebd49e;
     border: none;
     padding: 5px;
@@ -25,7 +25,7 @@ button{
     border: 2px white solid;
 
 }
-button p{
+form.reservation button p{
     margin:2px;
     padding: 3px;
     font-size: large;
