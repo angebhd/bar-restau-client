@@ -27,7 +27,26 @@ nav p a{
     padding: 0.2rem;
     color: #fff;
 }
+header div.header-button{
+    display: flex;
+}
+header div p#nav-button{
+    display: none;
+    margin-left: 20px;
 
+}
+header div#account-menu {
+    display: none;
+}
+header div#account-menu.show-account-menu{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    padding: 5px;
+    background-color: #111;
+
+}
 /* Footer */
 footer {
     display: flex;
@@ -58,6 +77,15 @@ footer {
     color: #ebd49e;
     margin-right: 10px;
 }
+/* ABOUT page */
+
+p.about{
+    text-align: justify;
+    padding: 5vh;
+
+}
+
+
 
 /* Media Query for responsiveness */
 @media only screen and (max-width: 768px) {
@@ -73,4 +101,20 @@ footer {
     .socialNetwork p {
         padding: 5px; /* Adjust padding for smaller screens */
     }
+/* Responsiveness for header */
+    header nav{
+        display: none;
+    }
+    header div p#nav-button{
+        display: block;
+    }
+    header nav.show-header-nav{
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        padding: 5px;
+        background-color: #111;
+    }
+
 }

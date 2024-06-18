@@ -46,23 +46,32 @@ function Reservation() {
   return (
     <>
       <Header></Header>
-      <h2>Reservation</h2>
+      <div id='hgallery'>
+        <img src="https://i.etsystatic.com/16086164/r/il/857dec/3350335768/il_fullxfull.3350335768_c6of.jpg" alt="Table for Ten"></img>
+        <div><p>Some text</p></div>
+        <div><p>Some other text</p></div>
+        <img src="https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg" alt="Table for four"></img>
+      </div>
+      
       <form onSubmit={handleSubmit} className="reservation" >
+      <h1 className="h1-reservation">Reservation</h1>
         <label htmlFor="table">Choose the type of table : </label>
         <select name="table" value={formData.table} onChange={handleChange} required>
           <option value={1}>Table for one</option>
           <option value={2}>Table for two</option>
+          <option value={3}>Table for three</option>
           <option value={4}>Table for four</option>
           <option value={8}>Table for eight</option>
+          <option value={10}>Table for ten</option>
+          <option value={99}> Special</option>
         </select>
 
-        <br></br>
-        <label htmlFor="time">Date and time : </label>
-        <input name='time' type="datetime-local" value={formData.time} onChange={handleChange} required></input>
-        <br></br>
-        <label htmlFor="name">Name : </label>
-        <input placeholder="Your name" name="name" value={formData.name} onChange={handleChange} required></input>
-        <button type="submit"><p>Reserve</p></button>
+        <label htmlFor="time">Date: </label>
+        <input name='time' type="date" value={formData.time} onChange={handleChange} required></input>
+        <label htmlFor="time">Time: </label>
+        <input name='time' type="Time" value={formData.time} onChange={handleChange} min={"8:00"} max={"23:00"} required></input>
+
+        <button type="submit">Reserve</button>
       </form>
       <Footer></Footer>
     </>

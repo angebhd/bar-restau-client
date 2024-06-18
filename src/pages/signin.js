@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Header from "../components/header"
 import "../styles/login.css"
 import LoginHeader from "../components/loginHeader"
 export default function Singnin() {
