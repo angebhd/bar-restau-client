@@ -2,12 +2,13 @@ import LoginHeader from "../components/loginHeader";
 import "../styles/login.css";
 import { Link } from "react-router-dom";
 function Login() {
+
     return (
 
         <div className="login" >
             <LoginHeader />
             <h1> Login page </h1>
-            <form id="login" method="post">
+            <form id="login" action="http://localhost:3001/login" method="POST">
                 <label htmlFor="username">Username: </label>
                 <input name="username"></input>
 

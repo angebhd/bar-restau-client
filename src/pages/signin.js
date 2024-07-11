@@ -6,7 +6,7 @@ export default function Singnin() {
         <div className="login" >
             <LoginHeader/>
             <h1> Sign-in page </h1>
-            <form id="login" method="post">
+            <form id="login" action="http://localhost:3001/signin" method="post">
 
                 <label htmlFor="fullname">Fullname: </label>
                 <input name="fullname" type="text"></input>

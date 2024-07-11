@@ -13,16 +13,16 @@ form#login {
     flex-direction: column;
     max-width: 1000px;
 
-    border: 0.5rem black solid;
+    border: 0.3rem #d79a10 solid;
     border-radius: 1rem;
     padding: 20px;
 
-    background-color: #d79a10;
+    background-color: #fff
 }
 
 form#login input {
     margin-left: 2rem;
-    background-color: #ebd49e;
+    background-color: white;
     padding: 5px;
     border-radius: 8px;
 }
@@ -31,7 +31,7 @@ form#login button {
     margin: 0 auto;
     margin-top: 50px;
     padding: 20px;
-    background-color: #ebd49e;
+    background-color: #d79a10;
     font-weight: bold;
     font-size: large;
     border-radius: 1rem;

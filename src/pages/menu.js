@@ -67,27 +67,27 @@ function Menu() {
                     <div className="soft">
                         <h4> Soft drink </h4>
                         <ul>
-                            <li> Fanta </li>
-                            <li> Coca </li>
                             <li> Sprite </li>
+                            <li> Fanta </li>
                             <li> Pepsi </li>
+                            <li> Coca </li>
                         </ul>
                     </div>
                     <div className="natural-juice">
                         <h4> Natural juice </h4>
                         <ul>
-                            <li> Macedoine </li>
                             <li> Appe </li>
-                            <li> Orange </li>
                             <li> Mango </li>
+                            <li> Orange </li>
                             <li> Citronade </li>
+                            <li> Macedoine </li>
                         </ul>
                     </div>
                     <div className="beer">
                         <h4> Beers </h4>
                         <ul>
-                            <li> Heinekein </li>
                             <li> Castle beer </li>
+                            <li> Heinekein </li>
                             <li> Primus </li>
                             <li> Turbo </li>
                             <li> Skol </li>
