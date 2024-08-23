@@ -39,7 +39,7 @@ function Header() {
             <div id="account-menu" >
                 <p>My orders</p>
                 <p>My reservations</p>
-                <p>Log out</p>
+                <p> <a href="http://localhost:3001/logout">Log out </a> </p>
             </div>
 
         </header>

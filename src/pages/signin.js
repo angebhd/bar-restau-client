@@ -1,27 +1,54 @@
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 import "../styles/login.css"
 import LoginHeader from "../components/loginHeader"
+import { signin } from "../services/userAuth"
+
 export default function Singnin() {
+    const [fullname, setFullname] = useState('');
+    const [username, setUsername] = useState('');
+    const [mail, setMail] = useState('');
+    const [password, setPassword] = useState('');
+    const [c_password, setC_password] = useState('');
+    const navigate = useNavigate();
+
+    const redirect = () => {
+        navigate('/login');
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (password === c_password) {
+            const response = await signin(fullname, username, mail, password);
+            alert(response.data);
+            redirect();
+
+
+        } else {
+            alert("Different password !")
+        }
+    }
+
     return (
         <div className="login" >
-            <LoginHeader/>
+            <LoginHeader />
             <h1> Sign-in page </h1>
-            <form id="login" action="http://localhost:3001/signin" method="post">
+            <form id="login" onSubmit={handleSubmit}>
 
                 <label htmlFor="fullname">Fullname: </label>
-                <input name="fullname" type="text"></input>
+                <input name="fullname" type="text" onChange={(e) => setFullname(e.target.value)}></input>
 
                 <label htmlFor="username">Username: </label>
-                <input name="username" type="text"></input>
+                <input name="username" type="text" onChange={(e) => setUsername(e.target.value)} ></input>
 
                 <label htmlFor="mail">Mail: </label>
-                <input name="mail" type="email"></input>
+                <input name="mail" type="email" onChange={(e) => setMail(e.target.value)} ></input>
 
                 <label htmlFor="password">Password: </label>
-                <input name="password" type="password"></input>
+                <input name="password" type="password" onChange={(e) => setPassword(e.target.value)} ></input>
 
-                <label htmlFor="c-password">Confirm password: </label>
-                <input name="c-password" type="password"></input>
+                <label htmlFor="c_password">Confirm password: </label>
+                <input name="c_password" type="password" onChange={(e) => setC_password(e.target.value)} ></input>
 
                 <button type="submit">Sign in</button>
 
