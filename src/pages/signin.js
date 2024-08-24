@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import "../styles/login.css"
 import LoginHeader from "../components/loginHeader"
-import { signin } from "../services/userAuth"
+import { userAuth } from "../services/userAuth"
 
 export default function Singnin() {
     const [fullname, setFullname] = useState('');
@@ -19,7 +19,7 @@ export default function Singnin() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (password === c_password) {
-            const response = await signin(fullname, username, mail, password);
+            const response = await userAuth.signin(fullname, username, mail, password);
             alert(response.data);
             redirect();
 

@@ -17,9 +17,9 @@ function Order() {
                 <h1 className="h1-reservation">Order</h1>
                 <p className="p-order" >Your order: </p>
                 <div id="client-order">
-                    <div className="order-container"><p>Item one</p> <i class="fa fa-trash"></i></div>
-                    <div className="order-container"><p>Item two</p> <i class="fa fa-trash"></i></div>
-                    <div className="order-container"><p>Item three</p> <i class="fa fa-trash"></i></div>
+                    <div className="order-container"><p>Item one</p> <i className="fa fa-trash"></i></div>
+                    <div className="order-container"><p>Item two</p> <i className="fa fa-trash"></i></div>
+                    <div className="order-container"><p>Item three</p> <i className="fa fa-trash"></i></div>
 
                 </div>
                 <br />

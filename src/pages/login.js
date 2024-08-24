@@ -3,7 +3,7 @@ import "../styles/login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../services/userAuth"
+import { userAuth } from "../services/userAuth"
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -13,7 +13,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const submit = await login(username, password);
+            const submit = await userAuth.login(username, password);
             if (submit.status === 200) {
                 navigate("/home");
             } else {
@@ -28,7 +28,6 @@ function Login() {
         }
 
     }
-
     return (
         <div className="login" >
             <LoginHeader />
