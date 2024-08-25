@@ -26,14 +26,13 @@ function Header() {
     const getUser = async () => {
         try {
             const resp = await userData.getUsername();
-            if (resp.status === 200) {
+            if (resp.status === 200 && !resp.data.error) {
                 setUsername(`${resp.data}`);
             }
             else {
                 setUsername(<Link to="/login">Login</Link>);
             }
         } catch (error) {
-
             setUsername(<Link to="/login">Login</Link>);
         }
     }

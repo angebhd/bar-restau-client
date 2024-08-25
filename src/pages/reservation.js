@@ -10,51 +10,65 @@ function Reservation() {
   const [reservationTable, setReservationTable] = useState(null);
   const [reservationDate, setReservationDate] = useState(null);
   const [reservationEndTime, setReservationEndTime] = useState(null);
+  const [reservationConflict, setReservationConflict] = useState(null);
   const getAllTables = async () => {
     try {
       const resp = await tables.getTables();
       setAllTables(resp.data);
-
     } catch (error) {
       alert('Somthing went wrong when fetching tables, refresh the page');
     }
   }
+  const checkConflicts = async ({ table, date, startTime, endTime }) => {
+    try {
+      const resp = await reservations.checkConflict({ table, date, startTime, endTime });
+      return resp;
+    } catch (error) {
+      alert('Unable to check reservations conflict')
+    }
+  }
   useEffect(() => {
     getAllTables();
-
   }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(reservationDate);
-    
+
     const date = new Date(reservationDate);
-    const reservationDateUTC = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
-    console.log(date.getTime()); // get the date to date
-    // const r
-      
+    const reservationDateUTC = new Date(date.getTime()).toISOString();
 
 
-    const reservation = { tableID: reservationTable, date: reservationDateUTC, endtime: reservationEndTime };
-    console.log(reservation);
-    
-    // try {
-    //   const resp = await reservations.makereservations(reservation);
-    //   if (resp.status === 200) {
-    //     alert(resp.data);
-    //   } else {
-    //     alert('Something went wrong with the reservation')
-    //   }
-    // } catch (error) {
-    //   if (error.response) {
-    //     if (error.response.data) {
-    //       alert(error.response.data)
-    //     } else {
-    //       alert("An error occurred.");
-    //     }
-    //   } else {
-    //     alert("An error occurred.");
-    //   }
-    // }
+    const getUTCEndTime = (endTime, startDate) => {
+      const [endHour, endMinute] = endTime.split(':').map(Number);
+      const endDate = new Date(startDate.setHours(endHour, endMinute))
+      return new Date(endDate.getTime()).toISOString();
+    }
+    const reservationEndTimeUTC = getUTCEndTime(reservationEndTime, date)
+    const checkConflict = await checkConflicts({ table: reservationTable, date: date.toISOString().split('T')[0], startTime: reservationDateUTC, endTime: reservationEndTimeUTC });
+    if (checkConflict.data.conflict) {
+      setReservationConflict(<div> <h4> {checkConflict.data.message}</h4> <h5>The table is reserved for this time: </h5><p><strong>Start: </strong>{checkConflict.data.start}</p> <p><strong>End: </strong>{checkConflict.data.end}</p></div>);
+      return
+    } else {
+      setReservationConflict(null);
+    }
+
+    const reservation = { tableID: reservationTable, date: date.toISOString().split('T')[0], startTime: reservationDateUTC, endTime: getUTCEndTime(reservationEndTime, date) };
+    //////////
+    try {
+      const resp = await reservations.make(reservation);
+      if (resp.status === 200 && !resp.data.error) {
+        alert(resp.data);
+      } else if (resp.data.error) {
+        alert(resp.data.message);
+      }
+      else {
+        alert('Something went wrong with the reservation')
+      }
+    } catch (error) {
+
+      alert("An error occurred.");
+
+    }
   };
 
   return (
@@ -69,7 +83,7 @@ function Reservation() {
       <form onSubmit={handleSubmit} className="reservation" >
         <h1 className="h1-reservation">Reservation</h1>
         <label htmlFor="table">Choose the type of table : </label>
-        <select name="table" required onChange={(e) => { setReservationTable(e.target.value) }}>
+        <select name="table" required onChange={(e) => { setReservationTable(e.target.value); }}>
           <option value="" disabled selected>Choose a table</option>
           {allTables.map(table => (
             <option key={table._id} value={table._id}>
@@ -80,8 +94,8 @@ function Reservation() {
         <label htmlFor="Date">Date and time: </label>
         <input name='time' type="datetime-local" required onChange={(e) => { setReservationDate(e.target.value) }}></input>
         <label htmlFor="time">Expected end time: </label>
-        <input name='time' type="Time" min={"8:00"} max={"23:00"} required onChange={(e) => { setReservationEndTime(e.target.value) }}></input>
-
+        <input name='time' type="Time" min={"8:00"} max={"23:45"} required onChange={(e) => { setReservationEndTime(e.target.value) }}></input>
+        {reservationConflict}
         <button type="submit">Reserve</button>
       </form>
       <Footer></Footer>

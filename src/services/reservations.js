@@ -3,12 +3,15 @@ const apiURL = "http://localhost:3001"
 
 
 const makereservations = async (reservation) => {
-    return await axios.post(`${apiURL}/api/makeBooking`, reservation, { withCredentials: true })
+    return await axios.post(`${apiURL}/api/reservation/make`, reservation, { withCredentials: true })
+}
+const checkConflict = async (reservation) => {
+    return await axios.post(`${apiURL}/api/reservation/checkConflicts`, reservation, { withCredentials: true })
 
 }
 const reservations = {
-    makereservations: makereservations,
-
+    make: makereservations,
+    checkConflict: checkConflict,
 }
 
 export { reservations }
