@@ -2,6 +2,11 @@ import Footer from "../components/footer"
 import Header from "../components/header"
 import "../styles/menu.css"
 
+import {menu} from "../services/menu"
+
+// console.log(await menu.getDrink())
+// console.log(await menu.getFood())
+
 
 function Menu() {
     return (
