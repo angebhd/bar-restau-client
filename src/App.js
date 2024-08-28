@@ -7,6 +7,8 @@ import About from './pages/about';
 import Login from './pages/login';
 import Singnin from './pages/signin';
 import Order from './pages/order';
+import Orders from './pages/orders';
+import Reservations from './pages/reservations';
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/reservation" element={<Reservation />} />
         <Route path="/order" element={<Order />} />
+
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/reservations' element={<Reservations />} />
 
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" exact element={<About />} />

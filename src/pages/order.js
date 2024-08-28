@@ -4,6 +4,7 @@ import Header from "../components/header";
 import { useState, useEffect, useCallback } from "react";
 import { menu } from "../services/menu"
 import { orders } from "../services/orders"
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,6 +14,7 @@ function Order() {
     const [orderItems, setOrderItems] = useState([]);
     const [displayItems, setDisplayItems] = useState();
     const [totalAmount, setTotalAmount] = useState(0)
+    const navigate = useNavigate();
 
     //getting list of meny by subtype and all 
     const [allFoodBySubtype, setAllFoodBySubtype] = useState(null);
@@ -30,7 +32,6 @@ function Order() {
     useEffect(() => { // to call it once
         gettingMenu()
     }, [])
-
     const showSubItems = async (e) => {
         const type = e.target.value;
         if (type === 'food') {
@@ -125,7 +126,6 @@ function Order() {
             setOrderItems(newOrders);
 
         }
-
     }, [orderItems])
 
     const deleteItem = useCallback(async (id) => {
@@ -200,7 +200,9 @@ function Order() {
         try {
             const sendOrder = await orders.make(order);
             if (sendOrder.status ===200 && !sendOrder.data.error) {
-                alert(sendOrder.data)
+                alert(sendOrder.data);
+                
+                navigate('/orders');
                 
             } else if (sendOrder.data.error) {
                 alert(sendOrder.data.message)   

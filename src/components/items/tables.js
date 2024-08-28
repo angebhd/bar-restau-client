@@ -33,7 +33,7 @@ function TableList (){
     return (
         <div className="items-container">
             {tables.map((table)=>(
-                <div className="items">
+                <div className="items" key={table.id}>
                 <h5>{table.name}</h5>
                 <img src={table.image} alt={table.name}></img>
                 </div>

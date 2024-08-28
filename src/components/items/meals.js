@@ -33,7 +33,7 @@ function MealList (){
     return (
         <div className="items-container">
             {meals.map((meal)=>(
-                <div className="items">
+                <div className="items" key={meal.id}>
                 <h5>{meal.name}</h5>
                 <img src={meal.image} alt={meal.name}></img>
                 </div>

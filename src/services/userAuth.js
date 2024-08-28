@@ -8,13 +8,23 @@ const signin = async (fullname, username, mail, password) => {
 const login = async (username, password) => {
     return await axios.post(`${apiURL}/login`, { username, password }, { withCredentials: true })
 }
-const test = async () => {
-    return await axios.get(`${apiURL}/details`, { withCredentials: true });
+const logout = async () => {
+    try {
+        const op = await axios.get(`${apiURL}/logout`, { withCredentials: true });
+        if (op.data.error) {
+            alert(op.data.message);
+        } else {
+            return true;
+        }
+    } catch (error) {
+        alert('Something went wrong');
+    }
 }
+
 const userAuth = {
     signin: signin,
     login: login,
-    test: test
+    logout: logout
 }
 
 export { userAuth }

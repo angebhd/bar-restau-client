@@ -39,7 +39,7 @@ function DrinkList() {
     return (
         <div className="items-container">
             {drinks.map((drink) => (
-                <div className="items">
+                <div className="items" key={drink.id}>
                     <h5>{drink.name}</h5>
                     <img src={drink.image} alt={drink.name}></img>
                 </div>
