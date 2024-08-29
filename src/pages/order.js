@@ -1,4 +1,5 @@
 import "../styles/reservation.css"
+import "../styles/order.css"
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { useState, useEffect, useCallback } from "react";
@@ -98,10 +99,6 @@ function Order() {
 
         const getItem = async (dd) => { return orderItems.find(item => item._id === dd); };
         const modifiedItem = await getItem(id);
-        console.log(id);
-        console.log(orderItems);
-
-        console.log(modifiedItem);
 
         modifiedItem.qty = modifiedItem.qty + 1;
 
@@ -162,27 +159,27 @@ function Order() {
 
             setDisplayItems(<>
                 <p className="p-order" >Your order: </p>
-                <div id="client-order">
-                    <div className="order-container">
-                        <p>SN</p>
-                        <p> Item name</p>  <p>Qty</p> <p>Add/Reduce</p> <p>Price</p> <p>Total price</p> <p><i>Delete</i></p>
-                    </div>
-                    <hr />
+                <table id="client-order">
+                    <tr className="header">
+                        <th>SN</th>
+                        <th> Item name</th>  <th>Qty</th> <th>+ / -</th> <th>Price</th> <th>Total price</th> <th><i>Delete</i></th>
+                    </tr>
+                    <br />
                     {orderItems.map((item) => (
-                        <div className="order-container" key={item._id}>
-                            <p>{getSn()} </p>
-                            <p>{item.name}</p>  <p>{item.qty}</p>
-                            <p>
-                                <button type="button" onClick={() => addQty(item._id)}><i className="fa fa-plus"></i></button>
-                                <button type="button" onClick={() => reduceQty(item.qty, item._id)}><i className="fa fa-minus"></i></button>
-                            </p>
-                            <p>RWF {item.price}</p>
-                            <p>RWF {item.price * item.qty}</p>
-
-                            <button type="button" onClick={() => deleteItem(item._id)}><i className="fa fa-trash"></i></button>
-                        </div>
+                        <tr className="order-container" key={item._id}>
+                            <td className="sn">{getSn()} </td>
+                            <td>{item.name}</td>  <td>{item.qty}</td>
+                            <td>
+                                <button type="button" onClick={() => addQty(item._id)} className="add"><i className="fa fa-plus"></i></button>
+                                <button type="button" onClick={() => reduceQty(item.qty, item._id)} className="reduce"><i className="fa fa-minus"></i></button>
+                            </td>
+                            <td>RWF {item.price}</td>
+                            <td>RWF {item.price * item.qty}</td>
+                            <td><button type="button" onClick={() => deleteItem(item._id)} className="delete"><i className="fa fa-trash"></i></button>                </td>
+                        </tr>
                     ))}
-                </div>
+                </table>
+                <hr />
             </>
             );
         } else {
@@ -192,6 +189,7 @@ function Order() {
     }, [orderItems, addQty, reduceQty, deleteItem]);
     const submitOrder = async (e) => {
         e.preventDefault();
+        if(orderItems.length <=0) return;
         const items = [];
         orderItems.forEach(item => {
             items.push({ id: item._id, quantity: item.qty });
@@ -199,13 +197,13 @@ function Order() {
         const order = { items: items, totalAmount: totalAmount, address: e.target.address.value }
         try {
             const sendOrder = await orders.make(order);
-            if (sendOrder.status ===200 && !sendOrder.data.error) {
+            if (sendOrder.status === 200 && !sendOrder.data.error) {
                 alert(sendOrder.data);
-                
+
                 navigate('/orders');
-                
+
             } else if (sendOrder.data.error) {
-                alert(sendOrder.data.message)   
+                alert(sendOrder.data.message)
             } else {
                 throw new Error("");
             }
@@ -220,39 +218,34 @@ function Order() {
     return (
         <>
             <Header></Header>
-            <div id='hgallery'>
-                <img src="https://framerusercontent.com/images/iP0BsyYh0IYgAchUCKTAQqclxyI.webp" alt="Food delivery "></img>
-                <div><p>Some text</p></div>
-                <div><p>Some other text</p></div>
-                <img src="https://d2w1ef2ao9g8r9.cloudfront.net/images/_sameSizeHero/Best-Food-Delivery-Apps_2022-07-12-002853_qeli.jpg" alt="Table for four"></img>
-            </div>
+
             <div id="customer-orders">
                 <h1 className="h1-reservation">Order</h1>
 
                 {displayItems}
+
                 <div id="client-order-add">
-                    <div onClick={addMenu}> <p> Add <i className="fa fa-plus"></i></p></div>
+                    <div className="addmenu" onClick={addMenu}> <p> Add items </p><i className="fa fa-plus"></i></div>
                     {addDiv}
                     {subElement}
                     <br />
                     <hr />
                     <p className="p-order2">Total: <em> RWF {totalAmount}</em></p>
                 </div>
-
+                <form className="reservation" onSubmit={submitOrder} >
+                    <label htmlFor="address"> Type your address of delivery make your order:  </label>
+                    <input name="address" required></input>
+                    <button >ORDER</button>
+                </form>
+            </div>
+            <div id='hgallery'>
+                <img src="https://framerusercontent.com/images/iP0BsyYh0IYgAchUCKTAQqclxyI.webp" alt="Food delivery "></img>
+                <div><p>Some text</p></div>
+                <div><p>Some other text</p></div>
+                <img src="https://d2w1ef2ao9g8r9.cloudfront.net/images/_sameSizeHero/Best-Food-Delivery-Apps_2022-07-12-002853_qeli.jpg" alt="Table for four"></img>
             </div>
 
-            <form className="reservation" onSubmit={submitOrder} >
-                {/* <p className="p-order" >Your order: </p>
-                <div id="client-order">
-                    <div className="order-container"><p>Item one</p>  <i className="fa fa-trash"></i></div>
-                    <div className="order-container"><p>Item two</p> <i className="fa fa-trash"></i></div>
-                    <div className="order-container"><p>Item three</p> <i className="fa fa-trash"></i></div>
 
-                </div> */}
-                <label htmlFor="address"> Type the address of delivery make your order:  </label>
-                <input name="address" required></input>
-                <button >ORDER</button>
-            </form>
             <Footer></Footer>
         </>
 

@@ -1,7 +1,8 @@
 /* Reservation and Oder pages */
 
 /* RESERVATION */
-form.reservation, div#customer-orders {
+form.reservation,
+div#customer-orders {
     display: flex;
     flex-direction: column;
     width: 1000px;
@@ -52,7 +53,9 @@ h1.h1-reservation {
 
 /* Order */
 form.reservation p.p-order,
-form.reservation p.p-order2, div#customer-orders p.p-order, div#customer-orders p.p-order2 {
+form.reservation p.p-order2,
+div#customer-orders p.p-order,
+div#customer-orders p.p-order2 {
     font-size: x-large;
 }
 
@@ -81,3 +84,4 @@ div#client-order div.order-container {
 div#client-order div.order-container i {
     color: rgb(200, 0, 0);
 }
+

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/reservation.css"
 import Footer from "../components/footer";
 import Header from "../components/header";
@@ -11,6 +12,7 @@ function Reservation() {
   const [reservationDate, setReservationDate] = useState(null);
   const [reservationEndTime, setReservationEndTime] = useState(null);
   const [reservationConflict, setReservationConflict] = useState(null);
+  const navigate = useNavigate()
   const getAllTables = async () => {
     try {
       const resp = await tables.getTables();
@@ -30,6 +32,12 @@ function Reservation() {
   useEffect(() => {
     getAllTables();
   }, []);
+  const getLocalTime = (DBDate) => {
+    const localDate = new Date(DBDate);
+    const localHour = localDate.getHours().toString().padStart(2, '0')
+    const localMinute = localDate.getMinutes().toString().padStart(2, '0')
+    return `${localHour} : ${localMinute}`
+}
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +54,7 @@ function Reservation() {
     const reservationEndTimeUTC = getUTCEndTime(reservationEndTime, date)
     const checkConflict = await checkConflicts({ table: reservationTable, date: date.toISOString().split('T')[0], startTime: reservationDateUTC, endTime: reservationEndTimeUTC });
     if (checkConflict.data.conflict) {
-      setReservationConflict(<div> <h4> {checkConflict.data.message}</h4> <h5>The table is reserved for this time: </h5><p><strong>Start: </strong>{checkConflict.data.start}</p> <p><strong>End: </strong>{checkConflict.data.end}</p></div>);
+      setReservationConflict(<div> <h4> {checkConflict.data.message}</h4> <p>The table is reserved from <strong>{getLocalTime(checkConflict.data.start)}</strong> to <strong>{getLocalTime(checkConflict.data.end)}</strong></p></div>);
       return
     } else {
       setReservationConflict(null);
@@ -58,6 +66,8 @@ function Reservation() {
       const resp = await reservations.make(reservation);
       if (resp.status === 200 && !resp.data.error) {
         alert(resp.data);
+        navigate('/reservations')
+        
       } else if (resp.data.error) {
         alert(resp.data.message);
       }
@@ -98,6 +108,7 @@ function Reservation() {
         {reservationConflict}
         <button type="submit">Reserve</button>
       </form>
+      <br/>
       <Footer></Footer>
     </>
 

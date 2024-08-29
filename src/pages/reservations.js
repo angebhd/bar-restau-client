@@ -1,4 +1,5 @@
-// import "../styles/reservation.css"
+import "../styles/reservation.css"
+import "../styles/reservations.css"
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { reservations } from "../services/reservations";
@@ -19,8 +20,8 @@ function Reservations() {
     const getdisplayReservation = () => {
         if (reser.length > 0) {
             setDisplayReservation(<>
-                <h2> {reser[0].userID.fullname} </h2>
-                <table>
+                <h1> {reser[0].userID.fullname}' reservations</h1>
+                <table className="dash">
                     <tr>
                         <th>Table</th>
                         <th>Date</th>
@@ -62,9 +63,12 @@ function Reservations() {
     return (
         <>
             <Header></Header>
-            <h1>Reservations <strong></strong></h1>
-            {displayReservation}
-            <Footer></Footer>
+            <div id="reservations">
+                {displayReservation}
+            </div>
+            <div id="reservationFooter">
+                <Footer></Footer>
+            </div>
         </>
     )
 

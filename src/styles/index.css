@@ -1,44 +1,51 @@
-*{
+* {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-body{
+
+body {
     margin: 0;
     background-color: #fef5de;
 }
 
 /* Header */
-header{
+header {
     padding: 0 0.3rem;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #111;
-    color:#fff;
+    color: #fff;
 }
-nav{
+
+nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 600px;
     align-items: center;
 }
-nav p a{
+
+nav p a {
     padding: 0.2rem;
     color: #fff;
 }
-header div.header-button{
+
+header div.header-button {
     display: flex;
 }
-header div p#nav-button{
+
+header div p#nav-button {
     display: none;
     margin-left: 20px;
 
 }
+
 header div#account-menu {
     display: none;
 }
-header div#account-menu.show-account-menu{
+
+header div#account-menu.show-account-menu {
     display: block;
     position: absolute;
     top: 40px;
@@ -47,6 +54,7 @@ header div#account-menu.show-account-menu{
     background-color: #111;
 
 }
+
 /* Footer */
 footer {
     display: flex;
@@ -77,9 +85,10 @@ footer {
     color: #ebd49e;
     margin-right: 10px;
 }
+
 /* ABOUT page */
 
-p.about{
+p.about {
     text-align: justify;
     padding: 5vh;
 
@@ -90,25 +99,32 @@ p.about{
 /* Media Query for responsiveness */
 @media only screen and (max-width: 768px) {
     footer {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
+        /* Adjust padding for smaller screens */
     }
 
     .socialNetwork {
-        flex-wrap: wrap; /* Allow social icons to wrap on smaller screens */
-        justify-content: center; /* Center social icons horizontally */
+        flex-wrap: wrap;
+        /* Allow social icons to wrap on smaller screens */
+        justify-content: center;
+        /* Center social icons horizontally */
     }
 
     .socialNetwork p {
-        padding: 5px; /* Adjust padding for smaller screens */
+        padding: 5px;
+        /* Adjust padding for smaller screens */
     }
-/* Responsiveness for header */
-    header nav{
+
+    /* Responsiveness for header */
+    header nav {
         display: none;
     }
-    header div p#nav-button{
+
+    header div p#nav-button {
         display: block;
     }
-    header nav.show-header-nav{
+
+    header nav.show-header-nav {
         display: block;
         position: absolute;
         top: 40px;
