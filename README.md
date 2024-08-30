@@ -12,10 +12,14 @@ This is the frontend of a web application for a bar-restaurant, developed using 
 
 ## Libraries and Tools Used
 - **axios**: For making HTTP requests to the backend API.
-- **useState**: To manage state in functional components.
-- **useEffect**: For performing side effects in functional components.
-- **useCallback**: For memoizing functions and optimizing performance.
-- **useNavigate**: For programmatically navigating in React Router.
+- **react-router-dom**: 
+  - **Route**: Defines the paths and components to render.
+  - **useNavigate**: For programmatically navigating between routes.
+  - **Routes**: A component for grouping and rendering `Route` elements.
+- **React Hooks**:
+  - **useState**: For managing state in functional components.
+  - **useEffect**: For performing side effects such as fetching data or updating the DOM in response to changes in state or props.
+  - **useCallback**: For memoizing functions to prevent unnecessary re-renders and optimize performance.
 
 ## Areas for Improvement
 - **Design**: Improve UI/UX for better user experience.
