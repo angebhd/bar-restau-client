@@ -1,28 +1,55 @@
-# I'm still working on it....
+
+# bar-restau
+
+## Overview
+This is the frontend of a web application for a bar-restaurant, developed using the MERN stack (MongoDB, Express, React, Node.js). The frontend allows users to sign up, log in, book tables, make orders, and view their bookings and orders
+
+## Features
+- User Authentication: Sign up, log in, and manage sessions using JWT tokens.
+- Table Booking: Users can book tables and view their reservations.
+- Ordering: Users can place orders and view their order history.
 
 
-<h1>Bar restau </h1>
+## Libraries and Tools Used
+- **axios**: For making HTTP requests to the backend API.
+- **useState**: To manage state in functional components.
+- **useEffect**: For performing side effects in functional components.
+- **useCallback**: For memoizing functions and optimizing performance.
+- **useNavigate**: For programmatically navigating in React Router.
 
-    The website should include the following pages:
-## 1. Homepage
-    A short presentation of the bar-restaurant, and and an overview of all others pages
-## 2. Menu
-    Contains all drinks, food, and services provided by the bar-restau
-## 3. Reservations
-    Give to the visitor the possibility to book a table
-## 4. Gallery
-    It'is just a set of good pictures of the bar restau
-## 5. Contact
-    Social networks of the bar restau and phone numbers
-## 6. About
-    Not really necessary
-#  ------------------------------------------------------
-<h1>Bar restau</h1>
+## Areas for Improvement
+- **Design**: Improve UI/UX for better user experience.
+- **Error Handling**: Implement comprehensive error handling for better reliability.
+- **Admin Page**: Add an admin page to manage users, orders, and reservations.
+- **User Account Updates**: Allow users to update their personal information.
+- **Payments**: Integrate payment gateway for online payments.
+- **Geolocation**: Automatically fetch GPS coordinates for delivery services.
 
-    Some features of the website :
-- The user can buy (command) foods, drinks, ...
-- The user can book a table
+## Getting Started
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the development server.
+
+## Folder Structure
+```
+/src
+  /components
+  /pages
+  /services
+  /styles
+  App.js
+  index.js
+```
 
 
-______________________________________________________________________________________________
-## Am gonna stop here, nex year am gonna add code to read data from the date base (meal, drink, ...), and add also add a admin page to see reservation, and do crud operations on the database.
+
+
+
+
+
+
+
+
+
+
+
