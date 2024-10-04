@@ -1,5 +1,4 @@
-import "../styles/reservation.css"
-import "../styles/reservations.css"
+
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { reservations } from "../services/reservations";

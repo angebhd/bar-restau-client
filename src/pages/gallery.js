@@ -1,6 +1,5 @@
 import Footer from "../components/footer"
 import Header from "../components/header"
-import "../styles/gallery.css"
 function Gallery() {
     return (
         <>

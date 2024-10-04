@@ -4,7 +4,6 @@ import Header from "../components/header";
 import DrinkList from "../components/items/drink";
 import MealList from "../components/items/meals";
 import TableList from "../components/items/tables";
-import "../styles/home.css"
 
 
 

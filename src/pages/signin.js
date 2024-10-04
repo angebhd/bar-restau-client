@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import "../styles/login.css"
 import LoginHeader from "../components/loginHeader"
 import { userAuth } from "../services/userAuth"
 

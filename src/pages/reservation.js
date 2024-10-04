@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/reservation.css"
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { tables } from "../services/tables";

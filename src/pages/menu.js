@@ -1,6 +1,5 @@
 import Footer from "../components/footer"
 import Header from "../components/header"
-import "../styles/menu.css"
 
 import {menu} from "../services/menu"
 

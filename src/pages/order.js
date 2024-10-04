@@ -1,5 +1,4 @@
-import "../styles/reservation.css"
-import "../styles/order.css"
+
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { useState, useEffect, useCallback } from "react";
