@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 import DrinkList from "../components/items/drink";
 import MealList from "../components/items/meals";
@@ -13,32 +14,35 @@ function Home() {
     return (
         <>
             <Header />
+            <div className="home">
+                <section id="hero" >
+                    {/* <img src="https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg" alt="Restaurant" /> */}
+                    <div className="hero-text">
+                        <h1>Welcome to Bar-restau</h1>
+                        <p>Where great food meets great ambiance.</p>
+                    </div>
+                </section>
 
-            <div id='hgallery'>
-                <img src="https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg" alt="Restaurant"></img>
-                <div><p>Some text</p></div>
-                <div><p>Some other text</p></div>
-                <img src="https://c0.wallpaperflare.com/preview/565/228/846/japanese-japan-restaurant-culture.jpg" alt="Restaurant"></img>
-            </div>
-            <div className="menu" id="hmenu">
-                <h1>MENU</h1>
-                <section>
-                    <h2 className="hmenu">Meals</h2>
-                    <MealList></MealList>
-                    <p>See all...</p>
+                <section id="menu">
+                    <h1>Our Menu</h1>
+                    <div className="menu-section">
+                        <h2>Meals</h2>
+                        <MealList />
+                        <p><Link to="/menu">See all meals</Link></p>
+                    </div>
+
+                    <div className="menu-section">
+                        <h2>Drinks</h2>
+                        <DrinkList />
+                        <p><Link to="/menu">See all drinks</Link></p>
+                    </div>
                 </section>
-                <section>
-                    <h2 className="hmenu">Drinks</h2>
-                    <DrinkList></DrinkList>
-                    <p>See all</p>
-                </section>
-                <h1>Tables</h1>
-                <section>
+
+                <section id="tables">
+                    <h1>Reserve a Table</h1>
                     <TableList />
-                    
                 </section>
             </div>
-
             <Footer></Footer>
         </>
     )

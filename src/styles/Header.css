@@ -1,11 +1,19 @@
 header.main {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:flex-end;
     background-color: var(--header-bg-color);
     color: var(--text-color);
-    padding: 20px;
+    padding: 8px;
     position: relative;
+}
+
+header.main div.head-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 header.main h1 {
@@ -16,31 +24,53 @@ header.main h1 {
 header.main nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 10px 0;
-    flex-wrap: wrap;
-    /* Allow wrapping for smaller screens */
+    flex-wrap: nowrap;
 }
 
 header.main nav p {
-    margin: 0 15px;
+    margin: 0 5px;
     font-size: 1.2rem;
+    width: 100%;
 }
 
-header.mainnav p a {
+header.main nav p a {
     color: var(--link-color);
+    display: inline-block;
+    width: 100%;
     text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+}
+header.main nav p a:hover{
+    background-color: var(--link-color);
+    color: var(--header-bg-color);
 }
 
 header.main .header-button {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
+    gap: 40px;
     width: 100%;
     max-width: 600px;
     align-items: center;
 }
 
 header.main .header-button #account-setting {
-    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+header.main .header-button #account-setting svg {
+    margin-left: 20px;
+    color: var(--link-color);
+    cursor: pointer;
 }
 
 header.main .header-button #nav-button {
@@ -49,28 +79,50 @@ header.main .header-button #nav-button {
     display: none;
 }
 
-header.main .header-right {
-    margin-left: auto;
-    /* Align to the right */
-}
+
 
 header.main #account-menu {
     display: none;
-    /* Hidden by default */
-    position: absolute;
-    right: 20px;
-    background-color: var(--menu-bg-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--header-bg-color);
+    /* border: 1px solid var(--border-color); */
+    border-radius: 8px;
     padding: 10px;
-    z-index: 10;
+    padding-right: 0;
+    transition: display 0.3s ease;
+}
+header.main #account-menu p{
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 5px;
+    max-width: 100%;
+    text-align: center;
+}
+header.main #account-menu p a{
+    width: 100%;
+    border-radius: 8px;
+    display: inline-block;
+}
+header.main #account-menu p a:hover{
+    background-color: var(--link-color);
+    color: var(--header-bg-color);
+    
+}
+header.main #account-menu p.logout {
+    color: red;
+    text-align: center;
+    width: 100%;
 }
 
-header.main .show-account-menu {
-    display: block;
-    /* Show user menu */
+header.main #account-menu p.logout:hover {
+    background-color: red;
+    color: var(--header-bg-color);
 }
 
-
+header.main #account-menu.show-account-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 header.main .header-nav {
     display: flex;
@@ -81,32 +133,45 @@ header.main .header-nav {
 @media (max-width: 768px) {
     header.main #header-nav {
         display: none;
+        transition: display 0.3s ease;
+
     }
 
-    header.main #header-nav {
+    header.main #header-nav.show-header-nav {
         display: flex;
         flex-direction: column;
     }
 
     header.main #header-nav p {
-        margin: 10px 0;
+        margin:  0;
     }
 
     header.main .header-button {
-        flex-direction: column;
+        flex-direction: row;
         /* Stack button and username */
-        align-items: flex-start;
+        justify-content: space-between;
         /* Align items to start */
     }
 
-    header.main .header-right {
-        margin-top: 10px;
-        /* Add margin on top */
+    header.main div.head-2 {
+        flex-direction: column-reverse;
+        align-items: start;
     }
 
-    header.main #nav-button {
+
+    header.main .header-button #nav-button {
         margin-bottom: 10px;
         display: block;
+
     }
+
+    header.main #account-menu {
+        position: absolute;
+        right: 10px;
+        top: 150px;
+        z-index: 10;
+    
+    }
+
 
 }

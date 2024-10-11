@@ -1,34 +1,192 @@
-#hgallery {
+div.home #hero {
+    background-image: url("https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0;
 }
 
-#hgallery img {
-    width: 300px; /* Adjust size as needed */
-    margin: 10px;
-    border-radius: 8px;
-}
 
-.menu {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--menu-bg-color);
-    border-radius: 8px;
-}
-
-.menu h1 {
+div.home .hero-text {
     text-align: center;
-    color: var(--text-color);
+    color: var(--accent-color);
+    background-color: var(--overlay-bg);
+    padding: 20px;
+
 }
 
-.hmenu {
-    margin-top: 20px;
-    color: var(--text-color);
+div.home .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.menu section {
-    margin-bottom: 30px;
+div.home .hero-text p {
+    font-size: 1.5rem;
+}
+
+/* Menu Section */
+div.home #menu {
+    padding: 2rem;
+    text-align: center;
+}
+
+div.home #menu h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+div.home .menu-section {
+    margin-bottom: 2rem;
+}
+
+div.home .menu-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+div.home .menu-section p a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+div.home .menu-section p a:hover {
+    text-decoration: underline;
+}
+
+/* Tables Section */
+div.home #tables {
+    padding: 2rem;
+    text-align: center;
+}
+
+div.home #tables h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+
+
+/* Items Container */
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+    justify-items: center;
+}
+
+/* Individual Item */
+.items {
+    text-align: center;
+    background-color: var(--theme-bg);
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.items img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.items h5 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}
+
+.items:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .items-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .items h5 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .items-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .items h5 {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    div.home .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    div.home .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    div.home #menu {
+        padding: 1rem;
+    }
+
+    div.home #menu h1 {
+        font-size: 2rem;
+    }
+
+    div.home .menu-section h2 {
+        font-size: 1.5rem;
+    }
+
+    div.home .menu-section {
+        margin-bottom: 1.5rem;
+    }
+
+    div.home #tables h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div.home .hero-text {
+        padding: 5px;
+    }
+
+    div.home #hero {
+        height: 400px;
+        padding: 5px;
+    }
+
+    div.home #menu h1 {
+        font-size: 1.8rem;
+    }
+
+    div.home .menu-section h2 {
+        font-size: 1.2rem;
+    }
+
+    div.home .menu-section {
+        margin-bottom: 1rem;
+    }
+
+    /* Table Section Adjustments */
+    div.home #tables h1 {
+        font-size: 1.8rem;
+    }
 }

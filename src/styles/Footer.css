@@ -1,6 +1,7 @@
 footer {
     background-color: var(--footer-bg-color);
     color: var(--text-color);
+    border-top: 2px solid var(--border-color);
     padding: 20px;
     text-align: center;
 }
@@ -47,4 +48,18 @@ footer nav a:hover, footer .socialNetwork a:hover{
     color: var(--footer-bg-color);
     background-color: var(--link-color);
     transition: background-color 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+
+    footer nav{
+        flex-direction: column;
+    }
+    footer .socialNetwork{
+        flex-wrap: wrap;
+    }
+  
+
+
 }
