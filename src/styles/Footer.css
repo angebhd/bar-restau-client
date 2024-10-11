@@ -1,0 +1,50 @@
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+footer p {
+    margin: 5px 0;
+}
+footer p.copy{
+    border-top: 2px solid var(--border-color);
+    padding-top: 10px;
+}
+
+footer .socialNetwork {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0;
+}
+footer nav {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer .socialNetwork a {
+    margin: 10px 10px;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+ footer nav a {
+    padding: 0.3rem;
+    margin: 0 10px;
+    border-radius: 4px;
+
+}
+footer nav a:hover, footer .socialNetwork a:hover{
+    color: var(--footer-bg-color);
+    background-color: var(--link-color);
+    transition: background-color 0.3s ease;
+}

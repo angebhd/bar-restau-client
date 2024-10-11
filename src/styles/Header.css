@@ -1,0 +1,112 @@
+header.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    position: relative;
+}
+
+header.main h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header.main nav {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+}
+
+header.main nav p {
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+header.mainnav p a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+header.main .header-button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+}
+
+header.main .header-button #account-setting {
+    font-size: 1.2rem;
+}
+
+header.main .header-button #nav-button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+header.main .header-right {
+    margin-left: auto;
+    /* Align to the right */
+}
+
+header.main #account-menu {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    right: 20px;
+    background-color: var(--menu-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    z-index: 10;
+}
+
+header.main .show-account-menu {
+    display: block;
+    /* Show user menu */
+}
+
+
+
+header.main .header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    header.main #header-nav {
+        display: none;
+    }
+
+    header.main #header-nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header.main #header-nav p {
+        margin: 10px 0;
+    }
+
+    header.main .header-button {
+        flex-direction: column;
+        /* Stack button and username */
+        align-items: flex-start;
+        /* Align items to start */
+    }
+
+    header.main .header-right {
+        margin-top: 10px;
+        /* Add margin on top */
+    }
+
+    header.main #nav-button {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+}

@@ -1,12 +1,17 @@
-function SocialNetwork(){
-    return(
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faFacebookF, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+function SocialNetwork() {
+    return (
         <div className="socialNetwork">
-            <p><a href="/"><i className='fas fa-phone-alt'></i></a></p>
-            <p><a href="/"><i className='fab fa-instagram'></i></a></p>
-            <p><a href="/"><i className='fab fa-facebook-f'></i></a></p>
-            <p><a href="/"><i className='fab fa-twitter'></i></a></p>
-            <p><a href="/"><i className='fab fa-whatsapp'></i></a></p>
+            <p><a href="/"> <FontAwesomeIcon icon={faPhoneAlt} /></a> </p>
+            <p><a href="/"><FontAwesomeIcon icon={faInstagram} /></a></p>
+            <p><a href="/"><FontAwesomeIcon icon={faFacebookF} /></a></p>
+            <p><a href="/"> <FontAwesomeIcon icon={faTwitter} /></a></p>
+            <p><a href="/"><FontAwesomeIcon icon={faWhatsapp} /></a></p>
         </div>
+
     )
 
 }

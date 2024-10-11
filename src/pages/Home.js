@@ -1,17 +1,18 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 import DrinkList from "../components/items/drink";
 import MealList from "../components/items/meals";
 import TableList from "../components/items/tables";
 
+import "../styles/Home.css";
 
 
 function Home() {
 
     return (
         <>
-            <Header></Header>
+            <Header />
 
             <div id='hgallery'>
                 <img src="https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg" alt="Restaurant"></img>

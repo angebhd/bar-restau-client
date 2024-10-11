@@ -1,6 +1,6 @@
 
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { useState, useEffect, useCallback } from "react";
 import { menu } from "../services/menu"
 import { orders } from "../services/orders"

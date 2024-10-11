@@ -1,0 +1,34 @@
+#hgallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+#hgallery img {
+    width: 300px; /* Adjust size as needed */
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--menu-bg-color);
+    border-radius: 8px;
+}
+
+.menu h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.hmenu {
+    margin-top: 20px;
+    color: var(--text-color);
+}
+
+.menu section {
+    margin-bottom: 30px;
+}
