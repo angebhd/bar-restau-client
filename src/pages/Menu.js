@@ -1,7 +1,9 @@
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 
-import {menu} from "../services/menu"
+import { menu } from "../services/menu"
+
+import "../styles/Menu.css";
 
 // console.log(await menu.getDrink())
 // console.log(await menu.getFood())
@@ -11,13 +13,13 @@ function Menu() {
     return (
         <>
             <Header></Header>
+
             <div id='hgallery'>
                 <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/10d80963172037.5aa8241d03552.jpg" alt="Comfort food"></img>
-                <div><p>Some text</p></div>
-                <div><p>Some other text</p></div>
+                <div><p>Delight your taste buds with our curated menu of drinks and meals.</p></div>
+                <div><p>Delight your taste buds with our curated menu of drinks and meals.</p></div>
                 <img src="https://static.vecteezy.com/system/resources/previews/029/510/064/large_2x/cocktails-assortment-served-on-dark-background-classic-drink-menu-concept-front-view-ai-generated-photo.jpg" alt="Cocktails"></img>
-                <img src="https://static.vecteezy.com/system/resources/previews/033/738/389/non_2x/food-and-drink-on-a-dark-background-ai-generated-free-photo.jpg" alt="Restaurant"></img>
-                <div><p>Some other text</p></div>
+                {/* <img src="https://static.vecteezy.com/system/resources/previews/033/738/389/non_2x/food-and-drink-on-a-dark-background-ai-generated-free-photo.jpg" alt="Restaurant"></img> */}
             </div>
             <h1>Menu</h1>
 

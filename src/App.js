@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import Home from './pages/Home'
-import Menu from './pages/menu'
+import Menu from './pages/Menu'
 import Gallery from './pages/gallery';
 import Reservation from './pages/reservation';
 import About from './pages/about';

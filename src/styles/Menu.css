@@ -1,0 +1,103 @@
+/* General menu styling */
+#menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.type-container {
+    border: 2px solid var(--border-color); /* Use your brown theme */
+    background-color: var(--theme-bg); /* Matches the theme */
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    margin-bottom: 30px;
+}
+
+.type-container h3 {
+    color: var(--accent-color); 
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.type-container h4 {
+    color: var(--accent-color); /* Adjusting section headers */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    list-style-type: circle;
+    color: var(--text-color);
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Food and Drink specific styling */
+#menu .food, #menu .drink {
+    background-color: var(--theme-bg); /* Distinguish food/drinks */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#menu .food h4, #menu .drink h4 {
+    color: var(--accent-color); 
+}
+
+/* Gallery Styling */
+#hgallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#hgallery img {
+    width: 45%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#hgallery div {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--theme-bg);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#hgallery div p {
+    font-size: 18px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    .type-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #hgallery img, #hgallery div {
+        width: 100%;
+    }
+}
+
+
