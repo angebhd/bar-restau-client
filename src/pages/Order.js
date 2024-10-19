@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { useState, useEffect, useCallback } from "react";
 import { menu } from "../services/menu";
 import { orders } from "../services/orders";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +27,8 @@ function Order({ isDark, toggleTheme }) {
     const [allDrinkBySubtype, setAllDrinkBySubtype] = useState(null);
     const [allMenu, setAllMenu] = useState(null);
 
+    const [loading, setLoading] = useState(true); // Loading state
+
     const gettingMenu = async () => {
         const foodByType = await menu.getSorted.foodBySubType();
         const drinkByType = await menu.getSorted.drinkBySubType();
@@ -34,6 +36,8 @@ function Order({ isDark, toggleTheme }) {
         setAllFoodBySubtype(foodByType);
         setAllDrinkBySubtype(drinkByType);
         setAllMenu(allmenu.data);
+
+        setLoading(false); // Stop loading once data is fetched
     }
     useEffect(() => { // to call it once
         gettingMenu()
@@ -193,12 +197,14 @@ function Order({ isDark, toggleTheme }) {
     }, [orderItems, addQty, reduceQty, deleteItem]);
     const submitOrder = async (e) => {
         e.preventDefault();
-        if(orderItems.length <=0) return;
+        if (orderItems.length <= 0) return;
+
         const items = [];
         orderItems.forEach(item => {
             items.push({ id: item._id, quantity: item.qty });
         })
         const order = { items: items, totalAmount: totalAmount, address: e.target.address.value }
+
         try {
             const sendOrder = await orders.make(order);
             if (sendOrder.status === 200 && !sendOrder.data.error) {
@@ -212,20 +218,29 @@ function Order({ isDark, toggleTheme }) {
                 throw new Error("");
             }
 
-
         } catch (error) {
             alert('Something went wrong')
-
         }
+    }
+
+
+    if (loading) {
+        // Loading state display
+        return <>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
+            <div className="loading-spinner-order"> <div class="spinner"></div> <p>Loading...</p></div>; 
+            <Footer/>
+        </>
     }
 
     return (
         <>
-            <Header isDark={isDark} toggleTheme={toggleTheme}/>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
+            
 
             <div id="customer-orders">
                 <h1 className="h1-reservation">Order</h1>
-
+                <p className="welcomeMSG">Welcome to our online ordering platform! Select your items and we'll take care of the rest</p>
                 {displayItems}
 
                 <div id="client-order-add">
@@ -243,10 +258,11 @@ function Order({ isDark, toggleTheme }) {
                 </form>
             </div>
             <div id='Ogallery'>
-                <img src="https://framerusercontent.com/images/iP0BsyYh0IYgAchUCKTAQqclxyI.webp" alt="Food delivery "></img>
-                <div><p>Some text</p></div>
-                <div><p>Some other text</p></div>
+                <div className="txt"><p>Order your favorite dishes now and enjoy fast delivery right to your door!"
+                {/* <img src="https://framerusercontent.com/images/iP0BsyYh0IYgAchUCKTAQqclxyI.webp" alt="Food delivery "></img> */}
+                </p></div>
                 <img src="https://d2w1ef2ao9g8r9.cloudfront.net/images/_sameSizeHero/Best-Food-Delivery-Apps_2022-07-12-002853_qeli.jpg" alt="Table for four"></img>
+                <div className="txt"><p>Need help with your order? Contact our support team at <Link to="tel:+1234567890">+1234567890</Link> or <Link to="mailto:custommer@bar-restau.com" >custommer@bar-restau.com</Link></p></div>
             </div>
             <Footer></Footer>
         </>

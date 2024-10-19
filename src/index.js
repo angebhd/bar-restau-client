@@ -10,5 +10,9 @@ root.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>
+
+  /* 
+    The strict mode is 
+  */
 );
 

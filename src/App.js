@@ -15,18 +15,19 @@ import "./styles/index.css"
 function App() {
 
   const [isDark, setIsDark] = useState(false);
-
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
+    console.log(`Retrieved theme: ${savedTheme}`); // Add this line
     if (savedTheme) {
       setIsDark(savedTheme === "dark");
     }
   }, []);
-
+  console.log('Component rendered');
   useEffect(() => {
     document.body.setAttribute("data-theme", isDark ? "dark" : "light");
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
+
   return (
     <div>
 

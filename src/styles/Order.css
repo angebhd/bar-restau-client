@@ -15,6 +15,18 @@
     margin-bottom: 20px;
 }
 
+ #customer-orders p.welcomeMSG {
+    position: relative;
+    opacity: 0;
+    animation: slideIn 10s ease-out forwards;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+
+  
+
 /* Order Table Styling */
 #customer-orders #client-order {
     width: 100%;
@@ -148,6 +160,38 @@
     border-radius: 8px;
     object-fit: cover;
 }
+#Ogallery div.txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Ogallery div.txt p{
+    text-align: center;
+}
+
+.loading-spinner-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.loading-spinner-order .spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-left-color: var(--accent-color); /* Spinner color */
+    border-radius: 50%;
+    width: 50px; /* Spinner width */
+    height: 50px; /* Spinner height */
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+
+.loading-spinner-order p {
+    margin-top: 10px;
+    font-size: 16px; /* Text size */
+    color: var(--text-color); /* Text color */
+}
 
 /* Responsiveness */
 @media (max-width: 768px) {
@@ -162,3 +206,27 @@
         font-size: 0.8rem;
     }
 }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    30%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display:none;
+      
+    }
+  }

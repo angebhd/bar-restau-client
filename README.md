@@ -33,6 +33,8 @@ This is the frontend of a web application for a bar-restaurant, developed using 
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
 3. Run `npm start` to start the development server.
+- For the front-end to run correctly, remove **<React.StrictMode>** in src/index.js to avoid its developments side effects 
+
 
 ## Folder Structure
 ```
