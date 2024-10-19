@@ -1,9 +1,9 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-function About() {
+function About({ isDark, toggleTheme }) {
     return (
         <>
-            <Header></Header>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
             <div id='hgallery'>
                 <img src="https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg" alt="Restaurant"></img>
                 <div><p>Some text</p></div>

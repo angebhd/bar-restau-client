@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { orders } from "../services/orders";
 
 
-function Orders() {
+function Orders({ isDark, toggleTheme }) {
     const [rowOrders, setOrders] = useState([])
     const [formattedOrders, setformattedOrders] = useState();
 
@@ -77,7 +77,7 @@ function Orders() {
 
     return (
         <>
-            <Header></Header>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
             <h1>My orders</h1>
             <div id="orderDashbord">
                 {formattedOrders}

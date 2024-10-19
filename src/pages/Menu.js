@@ -9,10 +9,10 @@ import "../styles/Menu.css";
 // console.log(await menu.getFood())
 
 
-function Menu() {
+function Menu({ isDark, toggleTheme }) {
     return (
         <>
-            <Header></Header>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
 
             <div id='hgallery'>
                 <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/10d80963172037.5aa8241d03552.jpg" alt="Comfort food"></img>

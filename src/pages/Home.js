@@ -9,11 +9,11 @@ import TableList from "../components/items/tables";
 import "../styles/Home.css";
 
 
-function Home() {
+function Home({ isDark, toggleTheme }) {
 
     return (
         <>
-            <Header />
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
             <div className="home">
                 <section id="hero" >
                     {/* <img src="https://c1.wallpaperflare.com/preview/260/821/271/bangkok-chairs-dining-photos.jpg" alt="Restaurant" /> */}

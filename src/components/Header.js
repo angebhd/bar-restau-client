@@ -8,27 +8,36 @@ import "../styles/Header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faUser, faBars } from '@fortawesome/free-solid-svg-icons';
 
-function Header() {
+function Header( { isDark, toggleTheme } ) {
     const navigate = useNavigate();
     const [username, setUsername] = useState();
-    const [isDark, setIsDark] = useState(false);
+    // const [isDark, setIsDark] = useState(false);
     const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
     const accountMenuRef = useRef(null);
 
-    // Dark/light mode
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            setIsDark(savedTheme === "dark");
-        }
-    }, []);
-    useEffect(() => {
-        document.body.setAttribute("data-theme", isDark ? "dark" : "light");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-    }, [isDark]);
+    // // Dark/light mode
+    // useEffect(() => {
+    //     const savedTheme = localStorage.getItem("theme");
+    //    console.log(isDark);
+       
+        
+    //     if (savedTheme) {
+    //         setIsDark(savedTheme === "dark");
+            
+    //     }
+    //     console.log(isDark);
+        
+    // }, []);
+    // useEffect(() => {
+    //     document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+    //     localStorage.setItem("theme", isDark ? "dark" : "light");
+    //     console.log(localStorage.getItem("theme"));
+        
+    // }, [isDark]);
 
-    const toggleTheme = () => setIsDark(!isDark);
+    // const toggleTheme = () => setIsDark(!isDark);
+
     const toggleAccountMenu = () => setIsAccountMenuOpen(prev => !prev);
     const toggleNavBar = () => setIsNavOpen(prev => !prev);
 

@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import { tables } from "../services/tables";
 import { reservations } from "../services/reservations";
 
-function Reservation() {
+function Reservation({ isDark, toggleTheme }) {
   const [allTables, setAllTables] = useState([]);
   const [reservationTable, setReservationTable] = useState(null);
   const [reservationDate, setReservationDate] = useState(null);
@@ -82,7 +82,7 @@ function Reservation() {
 
   return (
     <>
-      <Header></Header>
+      <Header isDark={isDark} toggleTheme={toggleTheme} />
       <div id='hgallery'>
         <img src="https://i.etsystatic.com/16086164/r/il/857dec/3350335768/il_fullxfull.3350335768_c6of.jpg" alt="Table for Ten"></img>
         <div><p>Some text</p></div>

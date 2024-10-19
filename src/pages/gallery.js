@@ -1,9 +1,9 @@
 import Footer from "../components/Footer"
 import Header from "../components/Header"
-function Gallery() {
+function Gallery({ isDark, toggleTheme }) {
     return (
         <>
-            <Header></Header>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
             <h1>Gallery</h1>
             <div className="gallery">
                 <p><img src='https://images.pexels.com/photos/5490965/pexels-photo-5490965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' alt="Bar"></img></p>

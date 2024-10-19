@@ -31,15 +31,15 @@ function App() {
     <div>
 
       <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/home" exact element={<Home />} />
+        <Route path="/" exact element={<Home isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
+        <Route path="/home" exact element={<Home isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
 
 
         <Route path='/login' element={<Login isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
         <Route path='/signup' element={<Singnup isDark={isDark} toggleTheme={()=>setIsDark(!isDark)}/>} />
 
 
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/menu" element={<Menu isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
         <Route path="/reservation" element={<Reservation />} />
         <Route path="/order" element={<Order />} />
 

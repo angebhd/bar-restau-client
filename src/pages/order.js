@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function Order() {
+function Order({ isDark, toggleTheme }) {
     const [addDiv, setAddDiv] = useState(null);
     const [subElement, setSubElement] = useState(null);
     const [orderItems, setOrderItems] = useState([]);
@@ -216,7 +216,7 @@ function Order() {
 
     return (
         <>
-            <Header></Header>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
 
             <div id="customer-orders">
                 <h1 className="h1-reservation">Order</h1>

@@ -5,7 +5,7 @@ import { reservations } from "../services/reservations";
 import { useState, useEffect } from "react";
 
 
-function Reservations() {
+function Reservations({ isDark, toggleTheme }) {
     const [reser, setReser] = useState([]);
     const [displayReservation, setDisplayReservation] = useState();
 
@@ -61,7 +61,7 @@ function Reservations() {
     }
     return (
         <>
-            <Header></Header>
+            <Header isDark={isDark} toggleTheme={toggleTheme} />
             <div id="reservations">
                 {displayReservation}
             </div>
