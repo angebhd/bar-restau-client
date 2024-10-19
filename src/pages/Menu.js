@@ -1,7 +1,7 @@
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 
-import { menu } from "../services/menu"
+import { menu } from "../services/menu";
 
 import "../styles/Menu.css";
 

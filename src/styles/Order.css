@@ -1,0 +1,164 @@
+/* General Styling */
+#customer-orders {
+    padding: 20px;
+    background-color: var(--background);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+#customer-orders .h1-reservation {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Order Table Styling */
+#customer-orders #client-order {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+#customer-orders #client-order th,
+#customer-orders #client-order td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#customer-orders #client-order .header {
+    background-color: var(--theme-bg);
+    color: var(--text-color);
+}
+
+#customer-orders #client-order .order-container:nth-child(even) {
+    background-color: var(--theme-bg);
+}
+#customer-orders #client-order .order-container button{
+    font-size: 1rem;
+}
+#customer-orders #client-order .order-container button.delete{
+    color: #cc0000;
+}
+
+#customer-orders .p-order {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Total Amount Section */
+#customer-orders .p-order2 {
+    font-size: 1.2rem;
+    text-align: right;
+    margin-right: 20px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Add Menu Section */
+#customer-orders #client-order-add {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#customer-orders .addmenu {
+    background-color: var(--theme-bg);
+    color: var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#customer-orders .addmenu:hover {
+    background-color: var(--accent-color);
+    color: var(--theme-bg);
+}
+
+#customer-orders .addmenu p {
+    margin-right: 10px;
+}
+
+#customer-orders #addTypeSelect, select {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--theme-bg);
+    color: var(--text-color);
+}
+
+/* Form Styling */
+#customer-orders .reservation {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#customer-orders .reservation label {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+#customer-orders .reservation input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#customer-orders .reservation button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--theme-bg);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#customer-orders .reservation button:hover {
+    font-weight: bold;
+}
+
+/* Gallery Section */
+#Ogallery {
+    margin: 20px 0;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#Ogallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #client-order th, #client-order td {
+        padding: 8px;
+    }
+
+    #customer-orders .reservation input {
+        width: 100%;
+    }
+    #customer-orders #client-order{
+        font-size: 0.8rem;
+    }
+}

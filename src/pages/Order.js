@@ -2,9 +2,15 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useState, useEffect, useCallback } from "react";
-import { menu } from "../services/menu"
-import { orders } from "../services/orders"
+import { menu } from "../services/menu";
+import { orders } from "../services/orders";
 import { useNavigate } from "react-router-dom";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMinus, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+
+import "../styles/Order.css";
 
 
 
@@ -163,18 +169,17 @@ function Order({ isDark, toggleTheme }) {
                         <th>SN</th>
                         <th> Item name</th>  <th>Qty</th> <th>+ / -</th> <th>Price</th> <th>Total price</th> <th><i>Delete</i></th>
                     </tr>
-                    <br />
                     {orderItems.map((item) => (
                         <tr className="order-container" key={item._id}>
                             <td className="sn">{getSn()} </td>
                             <td>{item.name}</td>  <td>{item.qty}</td>
                             <td>
-                                <button type="button" onClick={() => addQty(item._id)} className="add"><i className="fa fa-plus"></i></button>
-                                <button type="button" onClick={() => reduceQty(item.qty, item._id)} className="reduce"><i className="fa fa-minus"></i></button>
+                                <button type="button" onClick={() => addQty(item._id)} className="add"><FontAwesomeIcon icon={faPlus} /></button>
+                                <button type="button" onClick={() => reduceQty(item.qty, item._id)} className="reduce"><FontAwesomeIcon icon={faMinus} /></button>
                             </td>
                             <td>RWF {item.price}</td>
                             <td>RWF {item.price * item.qty}</td>
-                            <td><button type="button" onClick={() => deleteItem(item._id)} className="delete"><i className="fa fa-trash"></i></button>                </td>
+                            <td><button type="button" onClick={() => deleteItem(item._id)} className="delete"><FontAwesomeIcon icon={faTrash} /> </button>                </td>
                         </tr>
                     ))}
                 </table>
@@ -216,7 +221,7 @@ function Order({ isDark, toggleTheme }) {
 
     return (
         <>
-            <Header isDark={isDark} toggleTheme={toggleTheme} />
+            <Header isDark={isDark} toggleTheme={toggleTheme}/>
 
             <div id="customer-orders">
                 <h1 className="h1-reservation">Order</h1>
@@ -224,7 +229,7 @@ function Order({ isDark, toggleTheme }) {
                 {displayItems}
 
                 <div id="client-order-add">
-                    <div className="addmenu" onClick={addMenu}> <p> Add items </p><i className="fa fa-plus"></i></div>
+                    <div className="addmenu" onClick={addMenu}> <p> Add items </p><FontAwesomeIcon icon={faPlus} /></div>
                     {addDiv}
                     {subElement}
                     <br />
@@ -237,14 +242,12 @@ function Order({ isDark, toggleTheme }) {
                     <button >ORDER</button>
                 </form>
             </div>
-            <div id='hgallery'>
+            <div id='Ogallery'>
                 <img src="https://framerusercontent.com/images/iP0BsyYh0IYgAchUCKTAQqclxyI.webp" alt="Food delivery "></img>
                 <div><p>Some text</p></div>
                 <div><p>Some other text</p></div>
                 <img src="https://d2w1ef2ao9g8r9.cloudfront.net/images/_sameSizeHero/Best-Food-Delivery-Apps_2022-07-12-002853_qeli.jpg" alt="Table for four"></img>
             </div>
-
-
             <Footer></Footer>
         </>
 

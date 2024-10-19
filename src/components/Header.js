@@ -11,32 +11,11 @@ import { faSun, faMoon, faUser, faBars } from '@fortawesome/free-solid-svg-icons
 function Header( { isDark, toggleTheme } ) {
     const navigate = useNavigate();
     const [username, setUsername] = useState();
-    // const [isDark, setIsDark] = useState(false);
     const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
     const accountMenuRef = useRef(null);
 
-    // // Dark/light mode
-    // useEffect(() => {
-    //     const savedTheme = localStorage.getItem("theme");
-    //    console.log(isDark);
-       
-        
-    //     if (savedTheme) {
-    //         setIsDark(savedTheme === "dark");
-            
-    //     }
-    //     console.log(isDark);
-        
-    // }, []);
-    // useEffect(() => {
-    //     document.body.setAttribute("data-theme", isDark ? "dark" : "light");
-    //     localStorage.setItem("theme", isDark ? "dark" : "light");
-    //     console.log(localStorage.getItem("theme"));
-        
-    // }, [isDark]);
-
-    // const toggleTheme = () => setIsDark(!isDark);
+ 
 
     const toggleAccountMenu = () => setIsAccountMenuOpen(prev => !prev);
     const toggleNavBar = () => setIsNavOpen(prev => !prev);
