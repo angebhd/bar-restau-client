@@ -7,7 +7,7 @@ import Reservation from './pages/reservation';
 import About from './pages/about';
 import Login from './pages/Login';
 import Singnup from './pages/signup';
-import Order from './pages/order';
+import Order from './pages/Order';
 import Orders from './pages/orders';
 import Reservations from './pages/reservations';
 import "./styles/index.css"
@@ -40,14 +40,14 @@ function App() {
 
 
         <Route path="/menu" element={<Menu isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
-        <Route path="/reservation" element={<Reservation />} />
-        <Route path="/order" element={<Order />} />
+        <Route path="/reservation" element={<Reservation isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
+        <Route path="/order" element={<Order isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
 
-        <Route path='/orders' element={<Orders />} />
-        <Route path='/reservations' element={<Reservations />} />
+        <Route path='/orders' element={<Orders isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
+        <Route path='/reservations' element={<Reservations isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
 
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/about" exact element={<About />} />
+        <Route path="/gallery" element={<Gallery isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
+        <Route path="/about" exact element={<About isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} />} />
       </Routes>
     </div>
   );
