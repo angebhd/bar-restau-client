@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import { reservations } from "../services/reservations";
 import { useState, useEffect } from "react";
 
+import "../styles/Reservations.css";
+
 
 function Reservations({ isDark, toggleTheme }) {
     const [reser, setReser] = useState([]);
@@ -19,22 +21,26 @@ function Reservations({ isDark, toggleTheme }) {
     const getdisplayReservation = () => {
         if (reser.length > 0) {
             setDisplayReservation(<>
-                <h1> {reser[0].userID.fullname}' reservations</h1>
+                <h1> {reser[0].userID.fullname}'s reservations</h1>
                 <table className="dash">
-                    <tr>
-                        <th>Table</th>
-                        <th>Date</th>
-                        <th>Start time</th>
-                        <th>End time</th>
-                    </tr>
-                    {reser.map((res) => {
-                        return <tr key={res._id}>
-                            <td>{res.tableID.name} </td>
-                            <td>{res.date}</td>
-                            <td>{getLocalTime(res.startTime)}</td>
-                            <td>{getLocalTime(res.endTime)}</td>
+                    <thead>
+                        <tr>
+                            <th>Table</th>
+                            <th>Date</th>
+                            <th>Start time</th>
+                            <th>End time</th>
                         </tr>
-                    })}
+                    </thead>
+                    <tbody>
+                        {reser.map((res) => {
+                            return <tr key={res._id}>
+                                <td>{res.tableID.name} </td>
+                                <td>{res.date}</td>
+                                <td>{getLocalTime(res.startTime)}</td>
+                                <td>{getLocalTime(res.endTime)}</td>
+                            </tr>
+                        })}
+                    </tbody>
                 </table>
                 <p> Time zone: {getLocalTimeZone(reser[0].startTime)}</p>
             </>)
@@ -65,9 +71,9 @@ function Reservations({ isDark, toggleTheme }) {
             <div id="reservations">
                 {displayReservation}
             </div>
-            <div id="reservationFooter">
+            {/* <div id="reservationFooter"> */}
                 <Footer></Footer>
-            </div>
+            {/* </div> */}
         </>
     )
 

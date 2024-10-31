@@ -3,7 +3,7 @@ h1.gallery {
     text-align: center;
     font-size: 2.5rem;
     margin-top: 1rem;
-    color: #5a3d1e; /* Adjust based on theme */
+    color: var(--accent-color); /* Adjust based on theme */
     font-family: 'Georgia', serif;
 }
 

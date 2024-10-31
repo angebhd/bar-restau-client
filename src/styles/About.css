@@ -1,0 +1,80 @@
+/* About Page Styling */
+div.about h1.about {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    color: var(--accent-color); /* Brownish color matching theme */
+    /* width: 100%; */
+}
+
+div.about {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    animation: fadeInUp 0.7s ease-out;
+}
+
+div.about p.about{
+    text-align: justify;
+}
+div.about #hgallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    animation: fadeIn 1s ease-out;
+}
+
+div.about #hgallery img {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+div.about #hgallery img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+div.about #hgallery div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+div.about #hgallery p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

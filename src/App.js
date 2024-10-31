@@ -4,12 +4,12 @@ import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Gallery from './pages/Gallery';
 import Reservation from './pages/Reservation';
-import About from './pages/about';
+import About from './pages/About';
 import Login from './pages/Login';
 import Singnup from './pages/signup';
 import Order from './pages/Order';
 import Orders from './pages/orders';
-import Reservations from './pages/reservations';
+import Reservations from './pages/Reservations';
 import "./styles/index.css"
 
 function App() {
