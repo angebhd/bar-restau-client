@@ -1,0 +1,68 @@
+/* Gallery Page Styling */
+h1.gallery {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #5a3d1e; /* Adjust based on theme */
+    font-family: 'Georgia', serif;
+}
+
+div.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    animation: fadeIn 1s ease-out;
+    margin-bottom: 30px;
+}
+
+div.gallery p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    animation: imageFadeIn 1s forwards;
+}
+
+/* Hover effect */
+div.gallery img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Fade-in animation for the gallery grid */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in animation for each image */
+@keyframes imageFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
