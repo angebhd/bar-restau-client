@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Gallery from './pages/gallery';
-import Reservation from './pages/reservation';
+import Reservation from './pages/Reservation';
 import About from './pages/about';
 import Login from './pages/Login';
 import Singnup from './pages/signup';

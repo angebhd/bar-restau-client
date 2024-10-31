@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import { tables } from "../services/tables";
 import { reservations } from "../services/reservations";
 
+import "../styles/Reservation.css";
+
 function Reservation({ isDark, toggleTheme }) {
   const [allTables, setAllTables] = useState([]);
   const [reservationTable, setReservationTable] = useState(null);
@@ -36,7 +38,7 @@ function Reservation({ isDark, toggleTheme }) {
     const localHour = localDate.getHours().toString().padStart(2, '0')
     const localMinute = localDate.getMinutes().toString().padStart(2, '0')
     return `${localHour} : ${localMinute}`
-}
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +55,7 @@ function Reservation({ isDark, toggleTheme }) {
     const reservationEndTimeUTC = getUTCEndTime(reservationEndTime, date)
     const checkConflict = await checkConflicts({ table: reservationTable, date: date.toISOString().split('T')[0], startTime: reservationDateUTC, endTime: reservationEndTimeUTC });
     if (checkConflict.data.conflict) {
-      setReservationConflict(<div> <h4> {checkConflict.data.message}</h4> <p>The table is reserved from <strong>{getLocalTime(checkConflict.data.start)}</strong> to <strong>{getLocalTime(checkConflict.data.end)}</strong></p></div>);
+      setReservationConflict(<div className="reservation-conflict"> <h4> {checkConflict.data.message}</h4> <p>The table is reserved from <strong>{getLocalTime(checkConflict.data.start)}</strong> to <strong>{getLocalTime(checkConflict.data.end)}</strong></p></div>);
       return
     } else {
       setReservationConflict(null);
@@ -66,7 +68,7 @@ function Reservation({ isDark, toggleTheme }) {
       if (resp.status === 200 && !resp.data.error) {
         alert(resp.data);
         navigate('/reservations')
-        
+
       } else if (resp.data.error) {
         alert(resp.data.message);
       }
@@ -79,16 +81,10 @@ function Reservation({ isDark, toggleTheme }) {
 
     }
   };
-
   return (
     <>
       <Header isDark={isDark} toggleTheme={toggleTheme} />
-      <div id='hgallery'>
-        <img src="https://i.etsystatic.com/16086164/r/il/857dec/3350335768/il_fullxfull.3350335768_c6of.jpg" alt="Table for Ten"></img>
-        <div><p>Some text</p></div>
-        <div><p>Some other text</p></div>
-        <img src="https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg" alt="Table for four"></img>
-      </div>
+
       <form onSubmit={handleSubmit} className="reservation" >
         <h1 className="h1-reservation">Reservation</h1>
         <label htmlFor="table">Choose the type of table : </label>
@@ -105,9 +101,15 @@ function Reservation({ isDark, toggleTheme }) {
         <label htmlFor="time">Expected end time: </label>
         <input name='time' type="Time" min={"8:00"} max={"23:45"} required onChange={(e) => { setReservationEndTime(e.target.value) }}></input>
         {reservationConflict}
-        <button type="submit">Reserve</button>
+        <button type="submit">RESERVE</button>
       </form>
-      <br/>
+
+      <div id='hgallery'>
+        <img src="https://i.etsystatic.com/16086164/r/il/857dec/3350335768/il_fullxfull.3350335768_c6of.jpg" alt="Table for Ten"></img>
+        <div><p>Book a table in just a few clicks. Choose your preferred table and time, and we'll ensure it's ready when you arrive!</p></div>
+        <div><p>Looking for a special dining experience? Check out our private dining rooms or reserve a table for our upcoming wine tasting event!</p></div>
+        <img src="https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg" alt="Table for four"></img>
+      </div>
       <Footer></Footer>
     </>
 

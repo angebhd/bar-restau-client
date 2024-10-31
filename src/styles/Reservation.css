@@ -1,0 +1,76 @@
+/* General Layout */
+#hgallery {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#hgallery img {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+}
+
+form.reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    margin-top: 40px;
+    padding: 20px;
+    max-width: 600px;
+    background-color: var(--menu-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+form.reservation .h1-reservation {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form.reservation label {
+    margin: 10px 0 5px 0;
+    font-size: 1rem;
+}
+form.reservation select,
+form.reservation input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+
+form.reservation button[type="submit"] {
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--theme-bg);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+form.reservation button[type="submit"]:hover {
+    font-weight: bold;
+}
+
+div.reservation-conflict h4 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+div.reservation-conflict p {
+    color: var(--text-color);
+}
+
+div.reservation-conflict p strong {
+    color: var(--accent-color);
+}
