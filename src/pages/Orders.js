@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import { orders } from "../services/orders";
 
+import "../styles/Orders.css"
+
 
 function Orders({ isDark, toggleTheme }) {
     const [rowOrders, setOrders] = useState([])
@@ -23,10 +25,12 @@ function Orders({ isDark, toggleTheme }) {
                 <p> Time zone: {getLocalTimeZone(rowOrders[0].orderDate)}</p>
 
                 {rowOrders.map((order) => <>
-                    <table id="client-order" key={order._id} className="dash">
-                        <tr><h4>Customer name:  {rowOrders[0].customerId.fullname} </h4></tr>
-                        <tr className="p-order" ><p>Order #{order._id}</p> </tr>
-                        <tr className="p-order" ><p>Order date: {getLocalDateTime(order.orderDate)} </p></tr>
+                    <article key={order._id} className="order-card">
+                    <table id="client-order" className="dash">
+                        <h4>Customer name:  {rowOrders[0].customerId.fullname} </h4>
+                        <p className="p-order">Order #{order._id}</p>
+                        <p className="p-order">Order date: {getLocalDateTime(order.orderDate)} </p>
+
                         <tr className="order-container">
                             {/* <p>SN</p> */}
                             <th> Item name</th>  <th>Qty</th> <th>Price</th> <th>Total price</th>
@@ -39,12 +43,12 @@ function Orders({ isDark, toggleTheme }) {
                                 <td>RWF {item.id.price * item.quantity}</td>
                             </tr>
                         ))}
-                        <tr className="p-order" > <p>Total Amount: {order.totalAmount} </p></tr>
-                        <tr className="p-order" ><p>Order status: {order.status} </p></tr>
-                        <tr className="p-order" ><p>Order Delivery adress: {order.deliveryAddress} </p></tr>
+                        <p className="p-order">Total Amount: RWF {order.totalAmount} </p>
+                        <p className="p-order">Order status: {order.status} </p>
+                        <p className="p-order">Order Delivery adress: {order.deliveryAddress} </p>
 
                     </table>
-                    <br /><br /><br /><br />
+                    </article>
 
                 </>)
                 }
@@ -78,7 +82,7 @@ function Orders({ isDark, toggleTheme }) {
     return (
         <>
             <Header isDark={isDark} toggleTheme={toggleTheme} />
-            <h1>My orders</h1>
+            <h1 id="orderDashbord">My orders</h1>
             <div id="orderDashbord">
                 {formattedOrders}
 

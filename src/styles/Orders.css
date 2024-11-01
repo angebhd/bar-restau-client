@@ -1,0 +1,90 @@
+/* Orders Page Styling */
+#orderDashbord {
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 1rem;
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+h1#orderDashbord {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color); /* Consistent brown color for theme */
+    text-align: center;
+}
+
+/* Order table styling */
+div#orderDashbord .dash {
+    width: 100%;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+div#orderDashbord .dash h4, div#orderDashbord .p-order p {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: var(--menu-bg-color);
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+div#orderDashbord .dash th, div#orderDashbord .dash td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+div#orderDashbord .dash th {
+    background-color: var(--menu-bg-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+div#orderDashbord .order-container {
+    background-color: var(--menu-bg-color);
+}
+
+div#orderDashbord .order-container td {
+    background-color: var(--menu-bg-color);
+    padding: 0.5rem 1rem;
+}
+
+div#orderDashbord .dash tr:hover {
+    background-color: var(--menu-bg-color);
+}
+
+/* Order status and delivery address */
+div#orderDashbord .p-order {
+    font-size: 1rem;
+    color: var(--accent-color);
+    text-align: left;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    div#orderDashbord .dash, div#orderDashbord .p-order {
+        font-size: 0.9rem;
+    }
+    #orderDashbord h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

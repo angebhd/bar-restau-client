@@ -8,7 +8,7 @@ import About from './pages/About';
 import Login from './pages/Login';
 import Singnup from './pages/signup';
 import Order from './pages/Order';
-import Orders from './pages/orders';
+import Orders from './pages/Orders';
 import Reservations from './pages/Reservations';
 import "./styles/index.css"
 
