@@ -11,7 +11,7 @@
 h1#orderDashbord {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--accent-color); /* Consistent brown color for theme */
+    color: var(--accent-color); 
     text-align: center;
 }
 
@@ -58,7 +58,6 @@ div#orderDashbord .dash tr:hover {
     background-color: var(--menu-bg-color);
 }
 
-/* Order status and delivery address */
 div#orderDashbord .p-order {
     font-size: 1rem;
     color: var(--accent-color);

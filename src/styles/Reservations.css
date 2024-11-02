@@ -5,7 +5,7 @@ div#reservations {
     padding: 1rem;
     text-align: center;
     color: var(--text-color);
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif; */
     animation: fadeInUp 0.7s ease-out;
     min-height: 50vh;
 }
